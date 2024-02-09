@@ -1,0 +1,360 @@
+/* Font Declaration Metropolis*/
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/assets/fonts/metropolis/metropolis.light.otf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/assets/fonts/metropolis/metropolis.regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/assets/fonts/metropolis/metropolis.medium.otf') format('opentype');
+  font-weight: 500;
+}
+
+/* Font Declaration Omnes */
+@font-face {
+  font-family: 'Omnes';
+  src: url('/assets/fonts/omnes/omnes.light.ttf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Omnes';
+  src: url('/assets/fonts/omnes/omnes.regular.ttf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Omnes';
+  src: url('/assets/fonts/omnes/omnes.medium.ttf') format('opentype');
+  font-weight: 500;
+}
+
+/* Common Styles */
+:root {
+  --text-primary: rgba(32, 30, 61, 1);
+  --text-secondary: rgba(70, 73, 84, 1);
+  --red-primary: rgba(255, 0, 67, 1);
+  --red-secondary: rgba(224, 13, 58, 1);
+  --red-secondary-3: rgba(178, 10, 47, 1);
+  --blue-primary: rgba(75, 75, 94, 1);
+  --hra-blue: rgba(230, 234, 240, 1);
+  --hra-blue-3: rgba(230, 234, 240, 1);
+  --gray-secondary-2: rgba(76, 76, 88, 1);
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: 'Metropolis';
+}
+
+a:-webkit-any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Text helpers */
+.text-large {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.text-small {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+
+/* Mobile navigation menu */
+
+.mobile-nav-menu-btn {
+  right: 0;
+  z-index: 2;
+  position: fixed;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background-color: rgba(239, 242, 245, 1);
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  box-shadow: 0 0rem 0.5rem #0000004d, 0 0.0625rem 0.125rem 0.0625rem #00000026;
+}
+
+#mobile-nav-menu-state,
+.mobile-nav-menu {
+  display: none;
+}
+
+#mobile-nav-menu-state:checked~.mobile-nav-menu {
+  display: unset;
+}
+
+.mobile-nav-menu {
+  z-index: 1;
+  padding: 4rem 2rem;
+  position: absolute;
+  top: 3rem;
+  width: 80%;
+  max-height: calc(100vw - 2rem);
+  overflow-y: scroll;
+}
+
+.menu-item {
+  margin-bottom: 2.5rem;
+}
+
+.parent-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--red-secondary-3);
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  padding: 0.6875rem 1.5rem;
+}
+
+.child-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.40625rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.item-info {
+  font-family: 'Omnes';
+  font-weight: 300;
+  line-height: 1.5rem;
+  color: var(--gray-secondary-2);
+  padding: 0.6875rem 1.5rem;
+}
+
+.nested {
+  padding: 8px 48px;
+}
+
+@media (max-width: 544px) {
+  .mobile-nav-menu-btn {
+    display: flex;
+  }
+}
+
+/* Main Landing Styles */
+.landing-main {
+  background-image: url(/assets/images/landing-bg.png);
+  background-size: cover;
+  background-position: 31%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.mobile-nav-btn {
+  display: none;
+}
+
+.mobile-nav-menu {
+  background-color: var(--hra-blue-3);
+  position: fixed;
+}
+
+.landing-content {
+  padding: 0rem 1.5rem;
+}
+
+.title,
+.description {
+  margin-bottom: 1rem;
+}
+
+.title {
+  line-height: 2rem;
+  color: var(--text-primary);
+}
+
+.description {
+  line-height: 1.3125rem;
+  color: var(--text-secondary);
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--red-secondary);
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  clip-path: polygon(0 0, 100% 0%, 100% 65%, 92% 100%, 0 100%);
+  gap: 1rem;
+  width: max-content;
+}
+
+/* Collaborators Styles */
+.collaborators {
+  background-color: var(--blue-primary);
+}
+
+.collab-label {
+  color: white;
+  padding: 5rem 1.5rem 2.5rem;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: 400;
+}
+
+.collab-banner {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  overflow: scroll;
+  gap: 4rem;
+  padding: 0 4.45rem;
+  padding-bottom: 6.875rem;
+}
+
+/* Use the atlas styles */
+.use-the-atlas {
+  padding: 5rem 1.5rem;
+}
+
+.atlas-item:not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+.atlas-logo {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.atlas-title {
+  color: var(--text-primary);
+}
+
+.atlas-description {
+  color: var(--text-secondary);
+  line-height: 1.3125rem;
+}
+
+.atlas-logo,
+.atlas-title,
+.atlas-description {
+  margin-bottom: 0.75rem;
+}
+
+/* Footer top styles */
+.footer-top {
+  background-color: var(--blue-primary);
+  padding: 5rem 2rem;
+}
+
+.hra {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hra span {
+  font-weight: 400;
+  color: white;
+}
+
+.copyright {
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 300;
+  align-items: center;
+  font-family: 'Omnes';
+  color: white;
+  margin-bottom: 4rem;
+}
+
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.funded-by span {
+  display: inline-block;
+  font-family: 'Omnes';
+  font-weight: 300;
+  color: white;
+  margin-bottom: 2.5rem;
+}
+
+.fund-logos {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.fund-logos img {
+  width: 3.75rem;
+  height: 2.5rem;
+}
+
+/* Footer Bottom Styles */
+.footer-bottom {
+  background-color: var(--hra-blue);
+  padding: 5rem 1.5rem;
+}
+
+.footer-bottom span {
+  display: inline-block;
+  color: var(--red-secondary-3);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.footer-bottom ul {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 4rem;
+}
+
+.footer-bottom li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+  font-family: 'Omnes';
+  font-weight: 300;
+  color: var(--text-primary);
+}
+
+.disclaimer {
+  font-family: 'Omnes';
+  font-weight: 300;
+  line-height: 1.5rem;
+  color: var(--text-primary);
+}
+
+@media (max-width: 544px) {
+  /* shared between small & x-small */
+}
+
+/* Breakpoint for extra small */
+@media (max-width: 320px) {
+  .landing-main {
+    min-height: 35.5rem;
+  }
+}
+
+/* Breakpoint for small */
+@media (min-width: 321px) and (max-width: 544px) {}
