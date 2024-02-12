@@ -1,38 +1,38 @@
 /* Font Declaration Metropolis*/
 @font-face {
   font-family: 'Metropolis';
-  src: url('/assets/fonts/metropolis/metropolis.light.otf') format('opentype');
+  src: url('assets/fonts/metropolis/metropolis.light.otf') format('opentype');
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Metropolis';
-  src: url('/assets/fonts/metropolis/metropolis.regular.otf') format('opentype');
+  src: url('assets/fonts/metropolis/metropolis.regular.otf') format('opentype');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Metropolis';
-  src: url('/assets/fonts/metropolis/metropolis.medium.otf') format('opentype');
+  src: url('assets/fonts/metropolis/metropolis.medium.otf') format('opentype');
   font-weight: 500;
 }
 
 /* Font Declaration Omnes */
 @font-face {
   font-family: 'Omnes';
-  src: url('/assets/fonts/omnes/omnes.light.ttf') format('opentype');
+  src: url('assets/fonts/omnes/omnes.light.ttf') format('opentype');
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Omnes';
-  src: url('/assets/fonts/omnes/omnes.regular.ttf') format('opentype');
+  src: url('assets/fonts/omnes/omnes.regular.ttf') format('opentype');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Omnes';
-  src: url('/assets/fonts/omnes/omnes.medium.ttf') format('opentype');
+  src: url('assets/fonts/omnes/omnes.medium.ttf') format('opentype');
   font-weight: 500;
 }
 
@@ -156,7 +156,7 @@ a:-webkit-any-link {
 
 /* Main Landing Styles */
 .landing-main {
-  background-image: url(/assets/images/landing_bg.png);
+  background-image: url(assets/images/landing_bg.png);
   background-size: cover;
   display: flex;
   flex-direction: column;
