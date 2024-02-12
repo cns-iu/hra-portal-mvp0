@@ -104,11 +104,12 @@ a:-webkit-any-link {
 .mobile-nav-menu {
   z-index: 1;
   padding: 4rem 2rem;
-  position: absolute;
+  position: fixed;
   top: 3rem;
   width: 80%;
-  max-height: calc(100vw - 2rem);
+  max-height: calc(100vh - 11rem);
   overflow-y: scroll;
+  background-color: var(--hra-blue-3);
 }
 
 .menu-item {
@@ -127,7 +128,7 @@ a:-webkit-any-link {
 
 .child-menu-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   font-weight: 500;
   font-size: 0.9375rem;
@@ -155,9 +156,8 @@ a:-webkit-any-link {
 
 /* Main Landing Styles */
 .landing-main {
-  background-image: url(/assets/images/landing-bg.png);
+  background-image: url(/assets/images/landing_bg.png);
   background-size: cover;
-  background-position: 31%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,11 +166,6 @@ a:-webkit-any-link {
 
 .mobile-nav-btn {
   display: none;
-}
-
-.mobile-nav-menu {
-  background-color: var(--hra-blue-3);
-  position: fixed;
 }
 
 .landing-content {
@@ -330,7 +325,8 @@ a:-webkit-any-link {
   margin-bottom: 4rem;
 }
 
-.footer-bottom li {
+.footer-bottom li,
+.footer-bottom a {
   list-style-type: none;
   margin-bottom: 1rem;
   font-family: 'Omnes';
@@ -353,6 +349,7 @@ a:-webkit-any-link {
 @media (max-width: 320px) {
   .landing-main {
     min-height: 35.5rem;
+    background-position: 31%;
   }
 }
 
