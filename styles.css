@@ -107,8 +107,6 @@ a:-webkit-any-link {
   padding: 4rem 2rem;
   position: fixed;
   top: 3rem;
-  width: 80%;
-  max-height: calc(100vh - 11rem);
   overflow-y: scroll;
   background-color: var(--hra-blue-3);
 }
@@ -146,7 +144,7 @@ a:-webkit-any-link {
 }
 
 .nested {
-  padding: 8px 48px;
+  padding: 0.5rem 3rem;
 }
 
 @media (max-width: 544px) {
@@ -380,7 +378,115 @@ a:-webkit-any-link {
     min-height: 35.5rem;
     background-position: 31%;
   }
+
+  .mobile-nav-menu {
+    max-height: calc(100vh - 11rem);
+  }
 }
 
 /* Breakpoint for small */
-@media (min-width: 321px) and (max-width: 544px) {}
+@media (min-width: 321px) and (max-width: 544px) {
+  .mobile-nav-menu-btn {
+    margin: 1.5rem;
+  }
+
+  .mobile-nav-menu {
+    max-height: calc(100vh - 12rem);
+    top: 4rem;
+  }
+
+  .landing-main {
+    min-height: 52.125rem;
+    background-position: 24%;
+  }
+
+  .landing-content {
+    padding: 0 3.5rem;
+  }
+
+  .text-large {
+    font-size: 2.625rem;
+  }
+
+  .title {
+    line-height: 3.28125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .text-small {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+    letter-spacing: 0.07rem;
+  }
+
+  .collab-label {
+    padding: 3rem 9rem 2rem 3rem;
+    letter-spacing: 0.07rem;
+  }
+
+  .collab-banner {
+    gap: 7.5rem;
+    padding: 0 7rem;
+    padding-bottom: 6.75rem;
+  }
+
+  /* Use the atlas styles */
+  .use-the-atlas {
+    padding: 7.5rem 3.5rem;
+  }
+
+  .atlas-logo {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .atlas-logo,
+  .atlas-title {
+    margin-bottom: 1rem;
+  }
+
+  .atlas-title {
+    line-height: 3.28125rem;
+  }
+
+  .atlas-description {
+    letter-spacing: 0.07rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .atlas-item:not(:last-child) {
+    margin-bottom: 7rem;
+  }
+
+  /* Footer Top Styles */
+  .footer-top {
+    padding: 7.5rem 5rem;
+  }
+
+  .hra span {
+    font-weight: 300;
+    font-size: 2.25rem;
+  }
+
+  .social-media {
+    gap: 1rem;
+  }
+
+
+  .fund-logos {
+    gap: 1.375rem;
+  }
+
+  /* Footer Bottom Styles */
+  .footer-bottom {
+    padding: 7rem 6.5rem;
+  }
+
+  .footer-bottom ul:last-of-type {
+    margin-bottom: 6rem;
+  }
+}
