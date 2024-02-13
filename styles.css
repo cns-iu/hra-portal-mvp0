@@ -43,6 +43,7 @@
   --red-primary: rgba(255, 0, 67, 1);
   --red-secondary: rgba(224, 13, 58, 1);
   --red-secondary-3: rgba(178, 10, 47, 1);
+  --red-secondary-4: rgba(142, 8, 37, 1);
   --blue-primary: rgba(75, 75, 94, 1);
   --hra-blue: rgba(230, 234, 240, 1);
   --hra-blue-3: rgba(230, 234, 240, 1);
@@ -201,6 +202,14 @@ a:-webkit-any-link {
   width: max-content;
 }
 
+.primary-btn:hover {
+  background-color: var(--red-secondary-3);
+}
+
+.primary-btn:active {
+  background-color: var(--red-secondary-4);
+}
+
 /* Collaborators Styles */
 .collaborators {
   background-color: var(--blue-primary);
@@ -286,6 +295,26 @@ a:-webkit-any-link {
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 3rem;
+}
+
+.social-media .social-link :is(.default, .hover, .active, .focus) {
+  display: none;
+}
+
+.social-media .social-link:not(:active, :hover, :focus) .default {
+  display: unset;
+}
+
+.social-media .social-link:focus:not(:hover, :active) .focus {
+  display: unset;
+}
+
+.social-media .social-link:hover:not(:active) .hover {
+  display: unset;
+}
+
+.social-media .social-link:active .active {
+  display: unset;
 }
 
 .funded-by span {
