@@ -193,12 +193,12 @@ a {
   align-items: center;
   background-color: var(--red-secondary);
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 1.125rem;
   color: white;
   border: none;
-  padding: 5px 12px;
+  padding: 0.5rem 1.5rem;
   clip-path: polygon(0 0, 100% 0%, 100% 65%, 92% 100%, 0 100%);
-  gap: 4px;
+  gap: 1rem;
   width: max-content;
   line-height: 22px;
 }
@@ -217,11 +217,13 @@ a {
 }
 
 .collab-label {
+  font-family: 'Omnes';
   color: white;
   padding: 5rem 1.5rem 2.5rem;
   font-size: 1.25rem;
   line-height: 1.875rem;
   font-weight: 400;
+  letter-spacing: 0.07rem;
 }
 
 .collab-banner {
@@ -387,6 +389,17 @@ a {
 
   .mobile-nav-menu {
     max-height: calc(100vh - 11rem);
+  }
+
+  .primary-btn {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    gap: 4px;
+  }
+
+  .primary-btn img {
+    height: 1rem;
+    width: 1rem;
   }
 }
 
