@@ -122,7 +122,7 @@ a {
   color: var(--red-secondary-3);
   font-size: 1.125rem;
   line-height: 1.125rem;
-  padding: 0.6875rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .child-menu-item {
@@ -132,7 +132,7 @@ a {
   font-weight: 500;
   font-size: 0.9375rem;
   line-height: 1.40625rem;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 .item-info {
@@ -140,7 +140,8 @@ a {
   font-weight: 300;
   line-height: 1.5rem;
   color: var(--gray-secondary-2);
-  padding: 0.6875rem 1.5rem;
+  padding: 0 1.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .nested {
@@ -508,4 +509,8 @@ a {
   .footer-bottom ul:last-of-type {
     margin-bottom: 6rem;
   }
+}
+
+svg {
+  fill: currentColor;
 }
