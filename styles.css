@@ -58,7 +58,7 @@ body {
   font-family: 'Metropolis';
 }
 
-a:-webkit-any-link {
+a {
   color: inherit;
   text-decoration: none;
 }
@@ -173,14 +173,16 @@ a:-webkit-any-link {
   padding: 0rem 1.5rem;
 }
 
-.title,
-.description {
-  margin-bottom: 1rem;
+.landing-title {
+  font-weight: 500;
+  line-height: 3.28125rem;
+  font-size: 2.625rem;
+  color: var(--text-primary);
 }
 
-.title {
-  line-height: 2rem;
-  color: var(--text-primary);
+.landing-title,
+.description {
+  margin-bottom: 1rem;
 }
 
 .description {
@@ -193,13 +195,14 @@ a:-webkit-any-link {
   align-items: center;
   background-color: var(--red-secondary);
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   color: white;
   border: none;
-  padding: 0.5rem 1.5rem;
+  padding: 5px 12px;
   clip-path: polygon(0 0, 100% 0%, 100% 65%, 92% 100%, 0 100%);
-  gap: 1rem;
+  gap: 4px;
   width: max-content;
+  line-height: 22px;
 }
 
 .primary-btn:hover {
@@ -259,7 +262,7 @@ a:-webkit-any-link {
 .atlas-logo,
 .atlas-title,
 .atlas-description {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 /* Footer top styles */
@@ -273,11 +276,13 @@ a:-webkit-any-link {
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
+  width: min-content;
 }
 
 .hra span {
   font-weight: 400;
   color: white;
+  line-height: 2rem;
 }
 
 .copyright {
@@ -327,7 +332,8 @@ a:-webkit-any-link {
 
 .fund-logos {
   display: flex;
-  gap: 2.5rem;
+  flex-wrap: wrap;
+  gap: 2.3rem;
 }
 
 .fund-logos img {
