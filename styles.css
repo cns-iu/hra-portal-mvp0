@@ -38,6 +38,7 @@
 
 /* Common Styles */
 :root {
+  /* Colors */
   --text-primary: rgba(32, 30, 61, 1);
   --text-secondary: rgba(70, 73, 84, 1);
   --red-primary: rgba(255, 0, 67, 1);
@@ -50,6 +51,10 @@
   --hra-blue-3: rgba(230, 234, 240, 1);
   --gray-secondary-2: rgba(76, 76, 88, 1);
   --primary-white: rgba(255, 255, 255, 1);
+
+  /* Fonts */
+  --font-metropolis: 'Metropolis';
+  --font-omnes: 'Omnes'
 }
 
 body {
@@ -57,7 +62,7 @@ body {
 }
 
 * {
-  font-family: 'Metropolis';
+  font-family: var(--font-metropolis);
 }
 
 a {
@@ -186,11 +191,11 @@ a {
 }
 
 .child-menu-item:focus {
-  border: solid 4px var(--red-secondary);
+  border: solid 0.25rem var(--red-secondary);
 }
 
 .item-info {
-  font-family: 'Omnes';
+  font-family: var(--font-omnes);
   font-weight: 300;
   line-height: 1.5rem;
   color: var(--gray-secondary-2);
@@ -239,25 +244,34 @@ a {
 }
 
 .description {
+  font-family: var(--font-omnes);
   line-height: 1.3125rem;
   color: var(--text-secondary);
 }
 
 .primary-btn {
-  --polygon-slant-x-position: 92%;
-  --polygon-slant-y-position: 65%;
-  --border-width: 4px;
-  /* round(border-width / sqrt(2)) */
-  --border-slant-inner-offset: 2px;
+  --corner-width: 15px;
+  --corner-height: 13px;
+  --border-width: 0.25rem;
   background-color: var(--red-secondary);
   font-weight: 500;
   font-size: 1.125rem;
   color: white;
   border: none;
-  padding: 2.5px 1.5rem;
-  clip-path: polygon(0 0, 100% 0%, 100% var(--polygon-slant-y-position), var(--polygon-slant-x-position) 100%, 0 100%);
+  padding: 0.15625rem 1.5rem;
+  clip-path: polygon(
+      /* Bottom left */
+      0 100%,
+      /* Top left */
+      0 0,
+      /* Top right */
+      100% 0%,
+      /* Bottom right y-axis */
+      100% calc(100% - var(--corner-height)),
+      /* Bottom right x-axis */
+      calc(100% - var(--corner-width)) 100%);
   width: max-content;
-  line-height: 34.5px;
+  line-height: 2.15625rem;
 }
 
 .focus {
@@ -271,21 +285,26 @@ a {
 }
 
 .primary-btn:focus .focus {
-  --offset-start: var(--border-width);
-  --offset-end: calc(100% - var(--border-width));
-  --slant-x-position: calc(var(--polygon-slant-x-position) - var(--border-slant-inner-offset));
-  --slant-y-position: calc(var(--polygon-slant-y-position) - var(--border-slant-inner-offset));
-  --point-top-left: var(--offset-start) var(--offset-start);
-  --point-top-right: var(--offset-end) var(--offset-start);
-  --point-slope-start: var(--offset-end) var(--slant-y-position);
-  --point-slope-end: var(--slant-x-position) var(--offset-end);
-  --point-bottom-left: var(--offset-start) var(--offset-end);
-  --points: var(--point-top-left), var(--point-top-right), var(--point-slope-start), var(--point-slope-end), var(--point-bottom-left);
-  padding: 2.5px 1.5rem;
-  line-height: 34.5px;
+  /* Theta is the angle between the x-axis and the cut border */
+  /* approximately tan(theta / 2) */
+  --x-multiplier: 0.373;
+  /* approximately tan((90 - theta) / 2) */
+  --y-multiplier: 0.4566;
+  padding: 0.15625rem 1.5rem;
+  line-height: 2.15625rem;
   background-color: white;
   color: black;
-  clip-path: polygon(var(--points));
+  clip-path: polygon(
+      /* Bottom left */
+      var(--border-width) calc(100% - var(--border-width)),
+      /* Top left */
+      var(--border-width) var(--border-width),
+      /* Top right */
+      calc(100% - var(--border-width)) var(--border-width),
+      /* Bottom right y-axis */
+      calc(100% - var(--border-width)) calc(100% - var(--corner-height) - var(--border-width) * var(--y-multiplier)),
+      /* Bottom right x-axis */
+      calc(100% - var(--corner-width) - var(--border-width) * var(--x-multiplier)) calc(100% - var(--border-width)));
 }
 
 .primary-btn:hover {
@@ -306,13 +325,13 @@ a {
 }
 
 .collab-label {
-  font-family: 'Omnes';
+  font-family: var(--font-omnes);
   color: white;
   padding: 5rem 1.5rem 2.5rem;
   font-size: 1.25rem;
   line-height: 1.875rem;
   font-weight: 400;
-  letter-spacing: 0.07rem;
+  letter-spacing: 0.0875rem;
 }
 
 .collab-banner {
@@ -344,8 +363,10 @@ a {
 }
 
 .atlas-description {
+  font-family: var(--font-omnes);
   color: var(--text-secondary);
   line-height: 1.3125rem;
+  letter-spacing: 0.00375rem;
 }
 
 .atlas-logo,
@@ -379,7 +400,7 @@ a {
   gap: 0.5rem;
   font-weight: 300;
   align-items: center;
-  font-family: 'Omnes';
+  font-family: var(--font-omnes);
   color: white;
   margin-bottom: 4rem;
 }
@@ -413,7 +434,7 @@ a {
 
 .funded-by span {
   display: inline-block;
-  font-family: 'Omnes';
+  font-family: var(--font-omnes);
   font-weight: 300;
   color: white;
   margin-bottom: 2.5rem;
@@ -433,36 +454,55 @@ a {
 /* Footer Bottom Styles */
 .footer-bottom {
   background-color: var(--hra-blue);
-  padding: 5rem 1.5rem;
 }
 
-.footer-bottom span {
+.atlas-categories {
+  padding: 5rem 1.5rem 0 1.5rem;
+}
+
+.atlas-categories span {
   display: inline-block;
   color: var(--red-secondary-3);
   margin-bottom: 1.5rem;
   font-weight: 500;
 }
 
-.footer-bottom ul {
+.atlas-categories ul {
   margin: 0;
   padding: 0;
   margin-bottom: 4rem;
 }
 
-.footer-bottom li,
-.footer-bottom a {
-  list-style-type: none;
+.atlas-categories ul:last-child {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 6rem;
+}
+
+.atlas-category span {
+  margin: 0.5rem;
   margin-bottom: 1rem;
-  font-family: 'Omnes';
+}
+
+.atlas-categories li,
+.atlas-categories a {
+  list-style-type: none;
+  font-family: var(--font-omnes);
   font-weight: 300;
   color: var(--text-primary);
 }
 
+.atlas-categories li {
+  padding: 0.5rem;
+  line-height: 1.5rem;
+}
+
 .disclaimer {
-  font-family: 'Omnes';
+  font-family: var(--font-omnes);
   font-weight: 300;
   line-height: 1.5rem;
   color: var(--text-primary);
+  padding: 0 1.5rem 5.5rem 1.5rem;
 }
 
 @media (max-width: 544px) {
@@ -481,15 +521,16 @@ a {
   }
 
   .description {
+    font-family: var(--font-metropolis);
     margin-bottom: 2rem;
   }
 
   .primary-btn {
     font-size: 0.75rem;
-    line-height: 22px;
-    padding: 5px 12px;
-    --border-width: 2px;
-    --border-slant-inner-offset: 1px;
+    line-height: 1.375rem;
+    padding: 0.3125rem 0.75rem;
+    --border-width: 0.125rem;
+    --border-slant-inner-offset: 0.0625rem;
   }
 
   .focus {
@@ -498,17 +539,21 @@ a {
 
   .primary-btn:focus,
   .primary-btn:focus .focus {
-    line-height: 22px;
+    line-height: 1.375rem;
   }
 
   .primary-btn:focus .focus {
-    padding: 5px 12px;
+    padding: 0.3125rem 0.75rem;
   }
 
   .arrow-white {
     height: 1rem;
     width: 1.2rem;
     mask-size: 1rem 1rem;
+  }
+
+  .atlas-description {
+    font-family: var(--font-metropolis);
   }
 }
 
@@ -532,15 +577,6 @@ a {
     padding: 0 3.5rem;
   }
 
-  .text-large {
-    font-size: 2.625rem;
-  }
-
-  .title {
-    line-height: 3.28125rem;
-    margin-bottom: 0.5rem;
-  }
-
   .text-small {
     font-size: 1.125rem;
     line-height: 1.6875rem;
@@ -548,12 +584,12 @@ a {
 
   .description {
     margin-bottom: 2rem;
-    letter-spacing: 0.07rem;
+    letter-spacing: 0.07875rem;
   }
 
   .collab-label {
     padding: 3rem 9rem 2rem 3.5rem;
-    max-width: 343px;
+    max-width: 21.4375rem;
   }
 
   .collab-banner {
@@ -582,7 +618,7 @@ a {
   }
 
   .atlas-description {
-    letter-spacing: 0.07rem;
+    letter-spacing: 0.07875rem;
     margin-bottom: 2rem;
   }
 
@@ -609,11 +645,126 @@ a {
   }
 
   /* Footer Bottom Styles */
-  .footer-bottom {
-    padding: 7rem 6.5rem;
+  .atlas-categories {
+    padding: 7rem 6.5rem 0 6.5rem;
   }
 
-  .footer-bottom ul:last-of-type {
+  .disclaimer {
+    padding: 0rem 6.5rem 4rem 6.5rem;
+  }
+}
+
+@media (min-width: 555px) and (max-width: 768px) {
+  .mobile-nav-menu-btn {
+    margin: 1.5rem;
+  }
+
+  .mobile-nav-menu {
+    right: 2rem;
+    top: 4rem;
+    max-height: calc(100vh - 11rem);
+    width: calc(100vw - 6rem);
+  }
+
+  .landing-main {
+    min-height: 76.875rem;
+    background-position: 28%;
+  }
+
+  .landing-content {
+    padding: 0 6rem;
+  }
+
+  .landing-title {
+    font-size: 4.5rem;
+    line-height: 5.625rem;
+    letter-spacing: -0.225rem;
+  }
+
+  .text-small {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+
+  .description {
+    letter-spacing: 0.0875rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-omnes);
+  }
+
+  /* Collaborators Styles */
+  .collab-label {
+    padding: 3rem 6rem 2rem 6rem;
+    max-width: 36rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .collab-banner {
+    gap: 7rem;
+    padding: 3.65625rem 7rem;
+  }
+
+  /* Use the atlas styles */
+  .use-the-atlas {
+    padding: 7.5rem 6rem;
+  }
+
+  .atlas-title {
+    font-size: 2.625rem;
+    line-height: 3.28125rem;
+  }
+
+  .atlas-description {
+    font-family: var(--font-omnes);
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.07875rem;
+  }
+
+  .atlas-item:not(:last-child) {
+    margin-bottom: 8.5rem;
+  }
+
+  /* Footer Top Styles */
+  .footer-top {
+    padding: 7.375rem 5rem;
+  }
+
+  .hra img {
+    min-height: 7.875rem;
+    min-width: 7.875rem;
+  }
+
+  .hra span {
+    font-weight: 300;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .copyright {
+    line-height: 1.5rem;
+  }
+
+  /* Footer Bottom Styles */
+  .atlas-categories {
+    padding: 7rem 6.5rem 0 6.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .atlas-category span {
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .atlas-categories ul:nth-last-child(-n + 2) {
     margin-bottom: 6rem;
+  }
+
+  .disclaimer {
+    padding: 0rem 6.5rem 4rem 6.5rem;
   }
 }
