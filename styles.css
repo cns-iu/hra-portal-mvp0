@@ -236,6 +236,7 @@ a {
   line-height: 3.28125rem;
   font-size: 2.625rem;
   color: var(--text-primary);
+  margin-bottom: 1rem;
 }
 
 .landing-title,
@@ -250,8 +251,8 @@ a {
 }
 
 .primary-btn {
-  --corner-width: 15px;
-  --corner-height: 13px;
+  --corner-width: 0.9375rem;
+  --corner-height: 0.8125rem;
   --border-width: 0.25rem;
   background-color: var(--red-secondary);
   font-weight: 500;
@@ -344,13 +345,24 @@ a {
   padding-bottom: 6.875rem;
 }
 
-/* Use the atlas styles */
-.use-the-atlas {
-  padding: 5rem 1.5rem;
+/* Hide scrollbar for Chrome, Safari and Opera */
+.collab-banner::-webkit-scrollbar {
+  display: none;
 }
 
-.atlas-item:not(:last-child) {
-  margin-bottom: 5rem;
+/* Hide scrollbar for IE, Edge and Firefox */
+.collab-banner {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Use the atlas styles */
+.use-the-atlas {
+  display: grid;
+  gap: 5rem;
+  padding: 5rem 1.5rem;
 }
 
 .atlas-logo {
@@ -403,6 +415,7 @@ a {
   font-family: var(--font-omnes);
   color: white;
   margin-bottom: 4rem;
+  width: max-content;
 }
 
 .social-media {
@@ -437,7 +450,7 @@ a {
   font-family: var(--font-omnes);
   font-weight: 300;
   color: white;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .fund-logos {
@@ -457,7 +470,9 @@ a {
 }
 
 .atlas-categories {
-  padding: 5rem 1.5rem 0 1.5rem;
+  display: grid;
+  gap: 4rem;
+  padding: 5.5rem 1.5rem 6rem 1.5rem;
 }
 
 .atlas-categories span {
@@ -470,13 +485,11 @@ a {
 .atlas-categories ul {
   margin: 0;
   padding: 0;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
 }
 
 .atlas-categories ul:last-child {
   margin: 0;
-  padding: 0;
-  margin-bottom: 6rem;
 }
 
 .atlas-category span {
@@ -512,8 +525,11 @@ a {
 /* Breakpoint for extra small */
 @media (max-width: 320px) {
   .landing-main {
-    min-height: 35.5rem;
     background-position: 31%;
+  }
+
+  .landing-content {
+    padding: 8rem 1.5rem;
   }
 
   .mobile-nav-menu {
@@ -522,6 +538,7 @@ a {
 
   .description {
     font-family: var(--font-metropolis);
+    letter-spacing: 0.00375rem;
     margin-bottom: 2rem;
   }
 
@@ -529,6 +546,7 @@ a {
     font-size: 0.75rem;
     line-height: 1.375rem;
     padding: 0.3125rem 0.75rem;
+    letter-spacing: 0.00375rem;
     --border-width: 0.125rem;
     --border-slant-inner-offset: 0.0625rem;
   }
@@ -552,13 +570,17 @@ a {
     mask-size: 1rem 1rem;
   }
 
+  .atlas-title {
+    line-height: 2.25rem;
+  }
+
   .atlas-description {
     font-family: var(--font-metropolis);
   }
 }
 
 /* Breakpoint for small */
-@media (min-width: 321px) and (max-width: 554px) {
+@media (min-width: 321px) and (max-width: 544px) {
   .mobile-nav-menu-btn {
     margin: 1.5rem;
   }
@@ -577,6 +599,10 @@ a {
     padding: 0 3.5rem;
   }
 
+  .landing-title {
+    margin-bottom: 0.5rem;
+  }
+
   .text-small {
     font-size: 1.125rem;
     line-height: 1.6875rem;
@@ -588,18 +614,19 @@ a {
   }
 
   .collab-label {
-    padding: 3rem 9rem 2rem 3.5rem;
+    padding: 3rem 9.5rem 2rem 3.5rem;
     max-width: 21.4375rem;
   }
 
   .collab-banner {
-    gap: 7.5rem;
-    padding: 0 7rem;
+    gap: 6.5rem;
+    padding: 0 4rem;
     padding-bottom: 6.75rem;
   }
 
   /* Use the atlas styles */
   .use-the-atlas {
+    gap: 7rem;
     padding: 7.5rem 3.5rem;
   }
 
@@ -614,16 +641,13 @@ a {
   }
 
   .atlas-title {
+    font-size: 2.625rem;
     line-height: 3.28125rem;
   }
 
   .atlas-description {
     letter-spacing: 0.07875rem;
     margin-bottom: 2rem;
-  }
-
-  .atlas-item:not(:last-child) {
-    margin-bottom: 7rem;
   }
 
   /* Footer Top Styles */
@@ -646,15 +670,16 @@ a {
 
   /* Footer Bottom Styles */
   .atlas-categories {
-    padding: 7rem 6.5rem 0 6.5rem;
+    padding: 5.5rem 6.5rem 6rem 6.5rem;
   }
 
   .disclaimer {
-    padding: 0rem 6.5rem 4rem 6.5rem;
+    padding: 0rem 6.5rem 5.5rem 6.5rem;
   }
 }
 
-@media (min-width: 555px) and (max-width: 768px) {
+/* Breakpoint for Medium Screens */
+@media (min-width: 545px) and (max-width: 768px) {
   .mobile-nav-menu-btn {
     margin: 1.5rem;
   }
@@ -667,12 +692,11 @@ a {
   }
 
   .landing-main {
-    min-height: 76.875rem;
     background-position: 28%;
   }
 
   .landing-content {
-    padding: 0 6rem;
+    padding: 17.5rem 6rem;
   }
 
   .landing-title {
@@ -694,20 +718,28 @@ a {
 
   /* Collaborators Styles */
   .collab-label {
-    padding: 3rem 6rem 2rem 6rem;
-    max-width: 36rem;
+    font-family: var(--font-metropolis);
+    font-weight: 500;
+    padding: 4rem 6rem 2rem 6rem;
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 2.25rem;
+    letter-spacing: unset;
   }
 
   .collab-banner {
-    gap: 7rem;
-    padding: 3.65625rem 7rem;
+    gap: 7.5rem;
+    padding: 1.6875rem 7rem 4.125rem 6.5rem;
   }
 
   /* Use the atlas styles */
   .use-the-atlas {
+    gap: 8.5rem;
     padding: 7.5rem 6rem;
+  }
+
+  .atlas-logo {
+    height: 6rem;
+    width: 6rem;
   }
 
   .atlas-title {
@@ -723,13 +755,13 @@ a {
     letter-spacing: 0.07875rem;
   }
 
-  .atlas-item:not(:last-child) {
-    margin-bottom: 8.5rem;
-  }
-
   /* Footer Top Styles */
   .footer-top {
-    padding: 7.375rem 5rem;
+    padding: 6rem 5rem;
+  }
+
+  .hra {
+    margin-bottom: 0.8125rem;
   }
 
   .hra img {
@@ -744,27 +776,171 @@ a {
   }
 
   .copyright {
+    margin-bottom: 3.375rem;
     line-height: 1.5rem;
+  }
+
+  .social-media {
+    gap: 1rem;
+    margin-bottom: 3.375rem;
   }
 
   /* Footer Bottom Styles */
   .atlas-categories {
-    padding: 7rem 6.5rem 0 6.5rem;
-    display: grid;
+    padding: 6rem 4.5rem 6rem 4.5rem;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-
-  .atlas-category span {
-    margin: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .atlas-categories ul:nth-last-child(-n + 2) {
-    margin-bottom: 6rem;
+    gap: 4rem 7rem;
   }
 
   .disclaimer {
-    padding: 0rem 6.5rem 4rem 6.5rem;
+    padding: 0rem 4.5rem 6rem 4.5rem;
+  }
+}
+
+/* Breakpoint for Large Screens */
+@media screen and (min-width: 769px) and (max-width: 1012px) {
+  .mobile-nav-menu-btn {
+    margin: 1.5rem;
+  }
+
+  .mobile-nav-menu {
+    right: 2.5rem;
+    top: 4rem;
+    width: calc(100vw - 6rem);
+    height: calc(100vh - 11rem);
+  }
+
+  .landing-main {
+    min-height: 38rem;
+    background-position: 43%;
+  }
+
+  .landing-content {
+    margin-top: 11.4375rem;
+    margin-left: 7.5625rem;
+    margin-right: 5.6875rem;
+    margin-bottom: 8.8125rem;
+    padding: 0;
+  }
+
+  .landing-title {
+    font-size: 4rem;
+    line-height: 6rem;
+    letter-spacing: -0.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .text-small {
+    font-size: 1.125rem;
+    letter-spacing: 0.07875rem;
+  }
+
+  .description {
+    line-height: 1.6875rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Collaborators Styles */
+  .collaborators {
+    display: flex;
+  }
+
+  .collab-label {
+    padding: 3rem 0.5rem 3rem 4.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.0875rem;
+    min-width: 24.5rem;
+  }
+
+  .collab-banner {
+    padding: 0;
+    padding: 0 4.65625rem;
+    gap: 7.5rem;
+  }
+
+  /* Use the atlas styles */
+  .use-the-atlas {
+    grid-template-columns: 1fr 1fr;
+    padding: 7.5rem 6rem;
+    gap: 8rem 6.5rem;
+  }
+
+  .atlas-logo {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .atlas-title {
+    font-size: 2.625rem;
+    line-height: 3.28125rem;
+  }
+
+  .atlas-description {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    letter-spacing: 0.07875rem;
+    margin-bottom: 2rem;
+  }
+
+  .atlas-item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* Footer Top Styles */
+  .footer-top {
+    padding: 5rem 6rem;
+  }
+
+  .hra {
+    margin-bottom: 1rem;
+  }
+
+  .hra img {
+    height: 7.875rem;
+    width: 7.875rem;
+  }
+
+  .hra span {
+    line-height: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .copyright {
+    margin-bottom: 2rem;
+  }
+
+  .social-and-funded {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .social-media {
+    margin: 0;
+    gap: 1rem;
+  }
+
+  .funded-by span {
+    margin: 0.375rem 0 0.5rem 0;
+  }
+
+  .fund-logos {
+    gap: 1.5rem;
+  }
+
+  .fund-logos a {
+    display: flex;
+  }
+
+  /* Footer Bottom Styles */
+  .atlas-categories {
+    padding: 5rem 5rem 6rem 5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.5rem 8rem;
+  }
+
+  .disclaimer {
+    padding: 0rem 5rem 5rem 5rem;
   }
 }
