@@ -54,7 +54,12 @@
 
   /* Fonts */
   --font-metropolis: 'Metropolis';
-  --font-omnes: 'Omnes'
+  --font-omnes: 'Omnes';
+
+  /* .landing-title {
+    line-height: clamp(52.5px, 9vw, 96px);
+    font-size: clamp(42px, 8.5rem , 72px);
+  } */
 }
 
 body {
@@ -211,6 +216,11 @@ a {
   .mobile-nav-menu-btn {
     display: flex;
   }
+}
+
+/* Web Nav Menu */
+.web-nav-menu {
+  display: none;
 }
 
 /* Main Landing Styles */
@@ -534,6 +544,7 @@ a {
 
   .mobile-nav-menu {
     max-height: calc(100vh - 11rem);
+    width: calc(100vw - 5rem);
   }
 
   .description {
@@ -696,11 +707,11 @@ a {
   }
 
   .landing-content {
-    padding: 17.5rem 6rem;
+    padding: 17.5rem 3rem;
   }
 
   .landing-title {
-    font-size: 4.5rem;
+    font-size: 4rem;
     line-height: 5.625rem;
     letter-spacing: -0.225rem;
   }
@@ -838,6 +849,7 @@ a {
   .description {
     line-height: 1.6875rem;
     margin-bottom: 2rem;
+    font-size: 1.25rem;
   }
 
   /* Collaborators Styles */
@@ -942,5 +954,184 @@ a {
 
   .disclaimer {
     padding: 0rem 5rem 5rem 5rem;
+  }
+}
+
+/* Breakpoint for Extra Large Screens */
+@media screen and (min-width: 1013px) and (max-width: 1280px) {
+  .mobile-nav-menu-btn {
+    display: none;
+  }
+
+  .landing-main {
+    gap: 0;
+    background-position: 51%;
+  }
+
+  .web-nav-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0rem 4rem;
+    gap: 5rem;
+    height: 10rem;
+  }
+
+  .web-nav-menu img {
+    height: 88px;
+    width: 86px;
+  }
+
+  .web-nav-menu span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.25rem;
+    padding: 8px 80px 8px 4px;
+    white-space: nowrap;
+    position: relative;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--blue-primary);
+  }
+
+  .web-nav-menu span:hover {
+    border-bottom: 2px solid var(--red-secondary-3);
+  }
+
+  .web-nav-menu span:active {
+    border-bottom: 2px solid var(--red-secondary-5);
+    color: var(--red-secondary-5);
+  }
+
+  .web-nav-menu span:focus {
+    border: 4px solid var(--red-secondary);
+  }
+
+  .landing-content {
+    padding: 148px 84px 236px 312px;
+  }
+
+  .landing-title {
+    font-size: 4.5rem;
+    letter-spacing: -3.6px;
+    line-height: 90px;
+  }
+
+  .description {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    letter-spacing: 1.4px;
+    margin-bottom: 2rem;
+  }
+
+  /* Collaborators Styles */
+  .collaborators {
+    display: flex;
+  }
+
+  .collab-label {
+    padding: 4.5rem 2rem 4.5rem 4rem;
+    min-width: 21.8125rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    letter-spacing: unset;
+  }
+
+  .collab-banner {
+    gap: 7.5rem;
+    padding: 4.375rem 7.5rem;
+  }
+
+  /* Use the atlas styles */
+  .use-the-atlas {
+    grid-template-columns: 1fr 1fr;
+    padding: 7.5rem 6rem;
+    gap: 9rem;
+  }
+
+  .use-the-atlas .atlas-item:first-child .atlas-description {
+    flex-grow: 1;
+  }
+
+  .atlas-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .atlas-logo {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .atlas-title {
+    font-size: 2.625rem;
+    line-height: 3.28125rem;
+  }
+
+  .atlas-description {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    letter-spacing: 0.07875rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Footer Top Styles */
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "hra copyright";
+    padding: 5rem 6rem;
+    gap: 110.px;
+  }
+
+  .hra {
+    grid-area: hra;
+    margin-bottom: 1rem;
+  }
+
+  .hra img {
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .hra span {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .copyright {
+    margin: 0;
+    grid-area: copyright;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .social-and-funded {
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+  }
+
+  .social-media {
+    margin: 0;
+    gap: 1rem;
+  }
+
+  .fund-logos {
+    gap: 1.5rem;
+  }
+
+  /* Footer Bottom Styles */
+  .atlas-categories {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 80px 72px 64px 72px;
+    gap: 6.75rem;
+  }
+
+  .disclaimer {
+    padding: 0 72px 80px 72px;
   }
 }
