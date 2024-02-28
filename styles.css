@@ -116,7 +116,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.5rem;
+  margin: 1rem;
   box-shadow: 0 0rem 0.5rem #0000004d, 0 0.0625rem 0.125rem 0.0625rem #00000026;
 }
 
@@ -982,28 +982,35 @@ a {
     width: 86px;
   }
 
-  .web-nav-menu span {
+  .web-nav-menu .open {
+    border-bottom: 2px solid var(--red-secondary);
+  }
+
+  .web-nav-menu button {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2.25rem;
-    padding: 8px 80px 8px 4px;
+    padding: 0.5rem 5rem 0.5rem 0.25rem;
     white-space: nowrap;
     position: relative;
     color: var(--text-primary);
+    background-color: unset;
+    border: none;
     border-bottom: 2px solid var(--blue-primary);
   }
 
-  .web-nav-menu span:hover {
+  .web-nav-menu button:hover {
     border-bottom: 2px solid var(--red-secondary-3);
   }
 
-  .web-nav-menu span:active {
+  .web-nav-menu button:active {
     border-bottom: 2px solid var(--red-secondary-5);
     color: var(--red-secondary-5);
   }
 
-  .web-nav-menu span:focus {
+  .web-nav-menu button:focus-visible {
     border: 4px solid var(--red-secondary);
+    margin: -0.25rem -0.25rem -0.125rem -0.25rem;
   }
 
   .landing-content {
