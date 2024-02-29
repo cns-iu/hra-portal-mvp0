@@ -10,3 +10,12 @@ function largeScreenMenuButtonClickHandler(event) {
     event.target.classList.add(openClass);
   }
 }
+
+
+// To be Fixed
+function toggleSubMenu(index) {
+  console.log(document.getElementsByClassName('menu-item-headers')[0].querySelector('ul:nth-child(2)'));
+  // var subMenu = document.getElementsByClassName('menu-item-headers')[0].querySelector('ul:nth-child(2)');
+  // console.log(subMenu);
+  // subMenu.classList.toggle('unhide');
+}

@@ -15,123 +15,218 @@
     <img src="assets/images/hamburger.svg">
   </label>
   <div class="mobile-nav-menu">
-    <div class="menu-item">
-      <div class="parent-menu-item">
-        Atlas Data Overview
-        <span class="arrow arrow-red"></span>
-      </div>
-      <div class="item-info">Learn about the digital objects constructing the atlas.</div>
+    <div class="mobile-menu-top">
+      <img src="assets/logos/hra_logo_red.svg" />
     </div>
-    <div class="menu-item">
-      <div class="parent-menu-item">
-        Digital Object Database
-        <span class="arrow arrow-red"></span>
-      </div>
-      <div class="child-menu-item">
-        Anatomical Structures, Cell Types, and Biomarkers (ASCT+B) Tables
-      </div>
-      <div class="item-info">File formats: GRAPH, Turtle, CSV</div>
-      <div class="child-menu-item">
-        Vasculature Common Coordinate Framework (VCCF)
-      </div>
-      <div class="item-info">File formats: GRAPH, Turtle, CSV, GLB</div>
-      <div class="child-menu-item">
-        Organ Mapping Antibody Panel (OMAP) Tables
-      </div>
-      <div class="item-info">File formats: GRAPH, Turtle, CSV</div>
-      <div class="child-menu-item">
-        Functional Tissue Unit (FTU) Illustrations
-      </div>
-      <div class="item-info">File formats: PNG, SVG, AI</div>
-      <div class="child-menu-item">
-        3D Organ Models
-      </div>
-      <div class="item-info">File formats: GLB files</div>
+    <div class="mobile-menu-bottom">
+      <ul class="menu-item-headers">
+        <ul class="access-data" onclick="toggleSubMenu(0)">
+          <span>
+            Access Data
+            <img src="assets/images/expand_more.svg">
+          </span>
+          <ul class="access-data-menu">
+            <li>
+              <a class="menu-item s-red-3">
+                Access atlas data
+                <span class="arrow arrow-red"></span>
+              </a>
+              <span class="item-info mb-3">Learn about the digital objects constructing the atlas.</span>
+            </li>
+            <li>
+              <a class="menu-item s-red-3">
+                Digital Object Database
+                <span class="arrow arrow-red"></span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                Anatomical Structures, Cell Types, and Biomarkers (ASCT+B) Tables
+              </a>
+              <span class="item-info">File formats: GRAPH, Turtle, CSV</span>
+            </li>
+            <li>
+              <a class="menu-item">
+                Vasculature Common Coordinate Framework (VCCF)
+              </a>
+              <span class="item-info">File formats: GRAPH, Turtle, CSV, GLB</span>
+            </li>
+            <li>
+              <a class="menu-item">
+                Organ Mapping Antibody Panel (OMAP) Tables
+              </a>
+              <span class="item-info">File formats: GRAPH, Turtle, CSV</span>
+            </li>
+            <li>
+              <a class="menu-item">
+                Functional Tissue Unit (FTU) Illustrations
+              </a>
+              <span class="item-info">File formats: PNG, SVG, AI</span>
+            </li>
+            <li>
+              <a class="menu-item">
+                3D Organ Models
+              </a>
+              <span class="item-info mb-3">File formats: GLB files</span>
+            </li>
+            <li>
+              <a class="menu-item s-red-3">
+                APIs
+                <span class="arrow arrow-red"></span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                HRA APIs
+                <img src="assets/images/open_in_new.svg" />
+              </a>
+            </li>
+          </ul>
+        </ul>
+        <ul class="explore" onclick="toggleSubMenu(1)">
+          <span>
+            Explore
+            <img src="assets/images/expand_more.svg">
+          </span>
+          <ul class="explore-menu">
+            <li>
+              <a class="menu-item s-red-3">
+                Explore All Tools
+                <span class="arrow arrow-red"></span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                Atlas Applications
+                <img src="assets/images/open_in_new.svg" />
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                Exploration User Interface (EUI)
+                <img src="assets/images/open_in_new.svg" />
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                Functional Tissue Unit (FTU) Explorer
+                <img src="assets/images/open_in_new.svg" />
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                Cell Population Comparison
+                <img src="assets/images/open_in_new.svg" />
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                VR Organ Gallery
+                <img src="assets/images/open_in_new.svg" />
+              </a>
+            </li>
+          </ul>
+        </ul>
+        <ul class="contribute" onclick="toggleSubMenu(2)">
+          <span>
+            Contribute
+            <img src="assets/images/expand_more.svg">
+          </span>
+          <ul class="contribute-menu">
+            <li>
+              <a class="menu-item s-red-3">
+                Contribute
+                <span class="arrow arrow-red"></span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                Join the HRA Working Group
+                <img src="assets/images/open_in_new.svg" />
+              </a>
+            </li>
+            <li>
+              <a class="menu-item mb-3">
+                Anatomical Structures, Cell Types, and Biomarker (ASCT+B) Reporter
+              </a>
+            </li>
+            <li>
+              <a class="menu-item s-red-3">
+                Tissue Block Registration
+                <span class="arrow arrow-red"></span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                Registration User Interface (RUI)
+                <img src="assets/images/open_in_new.svg" />
+              </a>
+            </li>
+            <li>
+              <a class="menu-item">
+                Millitome
+                <img src="assets/images/open_in_new.svg" />
+              </a>
+            </li>
+          </ul>
+        </ul>
+        <ul class="learn" onclick="toggleSubMenu(3)">
+          <span>
+            Learn
+            <img src="assets/images/expand_more.svg">
+          </span>
+          <ul class="learn-menu">
+            <li>
+              <a class="menu-item s-red-3">
+                About the HRA
+                <span class="arrow arrow-red"></span>
+              </a>
+            </li>
+            <ul>
+              <a class="menu-item">
+                Learning Resources
+              </a>
+              <li>
+                <a class="item-info nested">Human Atlas Stories</a>
+              </li>
+              <li>
+                <a class="item-info nested">Visible Human Massive Online Open Course (VHMOOC)</a>
+              </li>
+              <li>
+                <a class="item-info nested">YouTube Videos</a>
+              </li>
+              <li>
+                <a class="item-info nested">Publications</a>
+              </li>
+              <li>
+                <a class="item-info nested">SOPs</a>
+              </li>
+              <li>
+                <a class="item-info nested">HRA Design System</a>
+              </li>
+              <li>
+                <a class="item-info nested mb-3">GitHub Repositories</a>
+              </li>
+            </ul>
+            <li>
+              <a class="menu-item">Frequently Asked Questions (FAQs)</a>
+            </li>
+            <li>
+              <a class="menu-item">Release Notes</a>
+            </li>
+            <li>
+              <a class="menu-item">Timeline</a>
+            </li>
+            <li>
+              <a class="menu-item">Editorial Board</a>
+            </li>
+            <li>
+              <a class="menu-item">Funding</a>
+            </li>
+          </ul>
+        </ul>
+      </ul>
     </div>
-    <div class="menu-item">
-      <div class="parent-menu-item">
-        APIs
-        <span class="arrow arrow-red"></span>
-      </div>
-      <div class="child-menu-item">
-        HRA APIs
-        <img src="assets/images/open_in_new.svg" />
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="parent-menu-item">
-        Explore All Tools
-        <span class="arrow arrow-red"></span>
-      </div>
-      <div class="child-menu-item">
-        Atlas Applications
-        <img src="assets/images/open_in_new.svg" />
-      </div>
-      <div class="child-menu-item">
-        Exploration User Interface (EUI)
-        <img src="assets/images/open_in_new.svg" />
-      </div>
-      <div class="child-menu-item">
-        Functional Tissue Unit (FTU) Explorer
-        <img src="assets/images/open_in_new.svg" />
-      </div>
-      <div class="child-menu-item">
-        Cell Population Comparison
-        <img src="assets/images/open_in_new.svg" />
-      </div>
-      <div class="child-menu-item">
-        VR Organ Gallery
-        <img src="assets/images/open_in_new.svg" />
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="parent-menu-item">
-        Contribute
-        <span class="arrow arrow-red"></span>
-      </div>
-      <div class="child-menu-item">
-        Join the HRA Working Group
-        <img src="assets/images/open_in_new.svg" />
-      </div>
-      <div class="child-menu-item">
-        Anatomical Structures, Cell Types, and Biomarker (ASCT+B) Reporter
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="parent-menu-item">
-        Tissue Block Registration
-        <span class="arrow arrow-red"></span>
-      </div>
-      <div class="child-menu-item">
-        Registration User Interface (RUI)
-        <img src="assets/images/open_in_new.svg" />
-      </div>
-      <div class="child-menu-item">
-        Millitome
-        <img src="assets/images/open_in_new.svg" />
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="parent-menu-item">
-        About the HRA
-        <span class="arrow arrow-red"></span>
-      </div>
-      <div class="child-menu-item">
-        Learning Resources
-      </div>
-      <div class="item-info nested">Human Atlas Stories</div>
-      <div class="item-info nested">Visible Human Massive Online Open Course (VHMOOC)</div>
-      <div class="item-info nested">YouTube Videos</div>
-      <div class="item-info nested">Publications</div>
-      <div class="item-info nested">SOPs</div>
-      <div class="item-info nested">HRA Design System</div>
-      <div class="item-info nested">GitHub Repositories</div>
-    </div>
-    <div class="child-menu-item">Frequently Asked Questions (FAQs)</div>
-    <div class="child-menu-item">Release Notes</div>
-    <div class="child-menu-item">Timeline</div>
-    <div class="child-menu-item">Editorial Board</div>
-    <div class="child-menu-item">Funding</div>
   </div>
   <section class="landing-main">
     <div class="web-nav-menu">
