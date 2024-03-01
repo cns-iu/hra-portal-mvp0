@@ -6,32 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Human Reference Atlas</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <input type="checkbox" aria-hidden="true" id="mobile-nav-menu-state">
-  <label for="mobile-nav-menu-state" aria-hidden="true" class="mobile-nav-menu-btn">
-    <img src="assets/images/hamburger.svg">
-  </label>
+  <button class="mobile-nav-menu-btn">
+    <label class="sr-only open-text">Open navigation menu</label>
+    <label class="sr-only close-text">Close navigation menu</label>
+    <img class="open-icon" src="assets/images/hamburger.svg">
+
+  </button>
+
   <div class="mobile-nav-menu">
     <div class="mobile-menu-top">
-      <img src="assets/logos/hra_logo_red.svg" />
+      <img src="assets/logos/hra_logo_red.svg" onclick="hideMenu()" />
     </div>
     <div class="mobile-menu-bottom">
       <ul class="menu-item-headers">
-        <ul class="access-data" onclick="toggleSubMenu(0)">
-          <span>
+        <li>
+          <button class="toggle">
             Access Data
             <img src="assets/images/expand_more.svg">
-          </span>
-          <ul class="access-data-menu">
+          </button>
+          <ul class="submenu">
             <li>
               <a class="menu-item s-red-3">
                 Access atlas data
                 <span class="arrow arrow-red"></span>
               </a>
-              <span class="item-info mb-3">Learn about the digital objects constructing the atlas.</span>
+              <span class="menu-item-info mb-3">Learn about the digital objects constructing the atlas.</span>
             </li>
             <li>
               <a class="menu-item s-red-3">
@@ -43,31 +46,31 @@
               <a class="menu-item">
                 Anatomical Structures, Cell Types, and Biomarkers (ASCT+B) Tables
               </a>
-              <span class="item-info">File formats: GRAPH, Turtle, CSV</span>
+              <span class="menu-item-info">File formats: GRAPH, Turtle, CSV</span>
             </li>
             <li>
               <a class="menu-item">
                 Vasculature Common Coordinate Framework (VCCF)
               </a>
-              <span class="item-info">File formats: GRAPH, Turtle, CSV, GLB</span>
+              <span class="menu-item-info">File formats: GRAPH, Turtle, CSV, GLB</span>
             </li>
             <li>
               <a class="menu-item">
                 Organ Mapping Antibody Panel (OMAP) Tables
               </a>
-              <span class="item-info">File formats: GRAPH, Turtle, CSV</span>
+              <span class="menu-item-info">File formats: GRAPH, Turtle, CSV</span>
             </li>
             <li>
               <a class="menu-item">
                 Functional Tissue Unit (FTU) Illustrations
               </a>
-              <span class="item-info">File formats: PNG, SVG, AI</span>
+              <span class="menu-item-info">File formats: PNG, SVG, AI</span>
             </li>
             <li>
               <a class="menu-item">
                 3D Organ Models
               </a>
-              <span class="item-info mb-3">File formats: GLB files</span>
+              <span class="menu-item-info mb-3">File formats: GLB files</span>
             </li>
             <li>
               <a class="menu-item s-red-3">
@@ -82,13 +85,13 @@
               </a>
             </li>
           </ul>
-        </ul>
-        <ul class="explore" onclick="toggleSubMenu(1)">
-          <span>
+        </li>
+        <li>
+          <button class="toggle">
             Explore
             <img src="assets/images/expand_more.svg">
-          </span>
-          <ul class="explore-menu">
+          </button>
+          <ul class="submenu">
             <li>
               <a class="menu-item s-red-3">
                 Explore All Tools
@@ -126,13 +129,13 @@
               </a>
             </li>
           </ul>
-        </ul>
-        <ul class="contribute" onclick="toggleSubMenu(2)">
-          <span>
+        </li>
+        <li>
+          <button class="toggle">
             Contribute
             <img src="assets/images/expand_more.svg">
-          </span>
-          <ul class="contribute-menu">
+          </button>
+          <ul class="submenu">
             <li>
               <a class="menu-item s-red-3">
                 Contribute
@@ -169,13 +172,13 @@
               </a>
             </li>
           </ul>
-        </ul>
-        <ul class="learn" onclick="toggleSubMenu(3)">
-          <span>
+        </li>
+        <li>
+          <button class="toggle">
             Learn
             <img src="assets/images/expand_more.svg">
-          </span>
-          <ul class="learn-menu">
+          </button>
+          <ul class="submenu learn-menu">
             <li>
               <a class="menu-item s-red-3">
                 About the HRA
@@ -187,25 +190,25 @@
                 Learning Resources
               </a>
               <li>
-                <a class="item-info nested">Human Atlas Stories</a>
+                <a class="menu-item-info nested">Human Atlas Stories</a>
               </li>
               <li>
-                <a class="item-info nested">Visible Human Massive Online Open Course (VHMOOC)</a>
+                <a class="menu-item-info nested">Visible Human Massive Online Open Course (VHMOOC)</a>
               </li>
               <li>
-                <a class="item-info nested">YouTube Videos</a>
+                <a class="menu-item-info nested">YouTube Videos</a>
               </li>
               <li>
-                <a class="item-info nested">Publications</a>
+                <a class="menu-item-info nested">Publications</a>
               </li>
               <li>
-                <a class="item-info nested">SOPs</a>
+                <a class="menu-item-info nested">SOPs</a>
               </li>
               <li>
-                <a class="item-info nested">HRA Design System</a>
+                <a class="menu-item-info nested">HRA Design System</a>
               </li>
               <li>
-                <a class="item-info nested mb-3">GitHub Repositories</a>
+                <a class="menu-item-info nested mb-3">GitHub Repositories</a>
               </li>
             </ul>
             <li>
@@ -224,7 +227,7 @@
               <a class="menu-item">Funding</a>
             </li>
           </ul>
-        </ul>
+        </li>
       </ul>
     </div>
   </div>
