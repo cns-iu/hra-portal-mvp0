@@ -13,11 +13,11 @@
   <button class="mobile-nav-menu-btn">
     <label class="sr-only open-text">Open navigation menu</label>
     <label class="sr-only close-text">Close navigation menu</label>
-    <img class="open-icon" src="assets/images/hamburger.svg">
-
+    <span class="svg-icon hamburger-icon"></span>
+    <span class="svg-icon close"></span>
   </button>
 
-  <div class="mobile-nav-menu">
+  <div class="mobile-nav-menu closed">
     <div class="mobile-menu-top">
       <img src="assets/logos/hra_logo_red.svg" onclick="hideMenu()" />
     </div>
@@ -26,20 +26,20 @@
         <li>
           <button class="toggle">
             Access Data
-            <img src="assets/images/expand_more.svg">
+            <span class="svg-icon expand rotate-180"></span>
           </button>
           <ul class="submenu">
             <li>
               <a class="menu-item s-red-3">
                 Access atlas data
-                <span class="arrow arrow-red"></span>
+                <span class="svg-icon arrow arrow-red"></span>
               </a>
-              <span class="menu-item-info mb-3">Learn about the digital objects constructing the atlas.</span>
+              <span class="menu-item-info margin-b-3">Learn about the digital objects constructing the atlas.</span>
             </li>
             <li>
               <a class="menu-item s-red-3">
                 Digital Object Database
-                <span class="arrow arrow-red"></span>
+                <span class="svg-icon arrow arrow-red"></span>
               </a>
             </li>
             <li>
@@ -70,16 +70,16 @@
               <a class="menu-item">
                 3D Organ Models
               </a>
-              <span class="menu-item-info mb-3">File formats: GLB files</span>
+              <span class="menu-item-info margin-b-3">File formats: GLB files</span>
             </li>
             <li>
               <a class="menu-item s-red-3">
                 APIs
-                <span class="arrow arrow-red"></span>
+                <span class="svg-icon arrow arrow-red"></span>
               </a>
             </li>
             <li>
-              <a class="menu-item">
+              <a class="menu-item" href="https://apps.humanatlas.io/api/" target="_blank">
                 HRA APIs
                 <img src="assets/images/open_in_new.svg" />
               </a>
@@ -89,35 +89,35 @@
         <li>
           <button class="toggle">
             Explore
-            <img src="assets/images/expand_more.svg">
+            <span class="svg-icon expand rotate-180"></span>
           </button>
           <ul class="submenu">
             <li>
               <a class="menu-item s-red-3">
                 Explore All Tools
-                <span class="arrow arrow-red"></span>
+                <span class="svg-icon arrow arrow-red"></span>
               </a>
             </li>
             <li>
-              <a class="menu-item">
+              <a class="menu-item" href="https://apps.humanatlas.io/" target="_blank">
                 Atlas Applications
                 <img src="assets/images/open_in_new.svg" />
               </a>
             </li>
             <li>
-              <a class="menu-item">
+              <a class="menu-item" href="https://apps.humanatlas.io/eui/" target="_blank">
                 Exploration User Interface (EUI)
                 <img src="assets/images/open_in_new.svg" />
               </a>
             </li>
             <li>
-              <a class="menu-item">
+              <a class="menu-item" href="https://hubmapconsortium.github.io/hra-ui/apps/ftu-ui/#/" target="_blank">
                 Functional Tissue Unit (FTU) Explorer
                 <img src="assets/images/open_in_new.svg" />
               </a>
             </li>
             <li>
-              <a class="menu-item">
+              <a class="menu-item" href="https://hubmapconsortium.github.io/tissue-bar-graphs/" target="_blank">
                 Cell Population Comparison
                 <img src="assets/images/open_in_new.svg" />
               </a>
@@ -133,40 +133,41 @@
         <li>
           <button class="toggle">
             Contribute
-            <img src="assets/images/expand_more.svg">
+            <span class="svg-icon expand rotate-180"></span>
           </button>
           <ul class="submenu">
             <li>
               <a class="menu-item s-red-3">
                 Contribute
-                <span class="arrow arrow-red"></span>
+                <span class="svg-icon arrow arrow-red"></span>
               </a>
             </li>
             <li>
-              <a class="menu-item">
+              <a class="menu-item" href="https://iu.co1.qualtrics.com/jfe/form/SV_bpaBhIr8XfdiNRH" target="_blank">
                 Join the HRA Working Group
                 <img src="assets/images/open_in_new.svg" />
               </a>
             </li>
             <li>
-              <a class="menu-item mb-3">
+              <a class="menu-item margin-b-3" href="https://hubmapconsortium.github.io/ccf-asct-reporter/"
+                target="_blank">
                 Anatomical Structures, Cell Types, and Biomarker (ASCT+B) Reporter
               </a>
             </li>
             <li>
               <a class="menu-item s-red-3">
                 Tissue Block Registration
-                <span class="arrow arrow-red"></span>
+                <span class="svg-icon arrow arrow-red"></span>
               </a>
             </li>
             <li>
-              <a class="menu-item">
+              <a class="menu-item" href="https://hubmapconsortium.github.io/ccf-ui/rui/" target="_blank">
                 Registration User Interface (RUI)
                 <img src="assets/images/open_in_new.svg" />
               </a>
             </li>
             <li>
-              <a class="menu-item">
+              <a class="menu-item" href="https://github.com/hubmapconsortium/hra-millitome" target="_blank">
                 Millitome
                 <img src="assets/images/open_in_new.svg" />
               </a>
@@ -176,13 +177,13 @@
         <li>
           <button class="toggle">
             Learn
-            <img src="assets/images/expand_more.svg">
+            <span class="svg-icon expand rotate-180"></span>
           </button>
-          <ul class="submenu learn-menu">
+          <ul class="submenu learn-menu ">
             <li>
               <a class="menu-item s-red-3">
                 About the HRA
-                <span class="arrow arrow-red"></span>
+                <span class="svg-icon arrow arrow-red"></span>
               </a>
             </li>
             <ul>
@@ -208,7 +209,7 @@
                 <a class="menu-item-info nested">HRA Design System</a>
               </li>
               <li>
-                <a class="menu-item-info nested mb-3">GitHub Repositories</a>
+                <a class="menu-item-info nested margin-b-3">GitHub Repositories</a>
               </li>
             </ul>
             <li>
@@ -249,7 +250,7 @@
         data collection, annotation, and usage.</div>
       <button class="primary-btn">
         <a href="https://doi.org/10.1038/s41556-021-00788-6" target="_blank" class="focus">Read Paper
-          <span class="arrow arrow-white"></span>
+          <span class="svg-icon arrow arrow-white"></span>
         </a>
       </button>
     </div>
@@ -286,7 +287,7 @@
       <button class="primary-btn">
         <a href="foobar" target="_blank" class="focus">
           Learn More
-          <span class="arrow arrow-white"></span>
+          <span class="svg-icon arrow arrow-white"></span>
         </a>
       </button>
     </div>
@@ -298,7 +299,7 @@
       <button class="primary-btn">
         <a href="foobar" target="_blank" class="focus">
           Browse Apps
-          <span class="arrow arrow-white"></span>
+          <span class="svg-icon arrow arrow-white"></span>
         </a>
       </button>
     </div>
@@ -310,7 +311,7 @@
       <button class="primary-btn">
         <a href="foobar" target="_blank" class="focus">
           Get Started
-          <span class="arrow arrow-white"></span>
+          <span class="svg-icon arrow arrow-white"></span>
         </a>
       </button>
     </div>
@@ -322,7 +323,7 @@
       <button class="primary-btn">
         <a href="foobar" target="_blank" class="focus">
           View Resources
-          <span class="arrow arrow-white"></span>
+          <span class="svg-icon arrow arrow-white"></span>
         </a>
       </button>
     </div>
