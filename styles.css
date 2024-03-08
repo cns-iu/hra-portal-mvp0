@@ -263,8 +263,8 @@ body:has(>.menu-opened) {
 
 .mobile-menu-top img {
   cursor: pointer;
-  height: 68px;
-  width: 66px;
+  height: 4.25rem;
+  width: 4.125rem;
 }
 
 .mobile-menu-bottom {
@@ -1367,7 +1367,7 @@ li .menu-item-info {
   }
 
   .landing-content {
-    padding: 172px 88px 276px 470px;
+    padding: 10.75rem 5.5rem 17.25rem 29.375rem;
   }
 
   .description {
