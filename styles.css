@@ -263,8 +263,8 @@ body:has(>.menu-opened) {
 
 .mobile-menu-top img {
   cursor: pointer;
-  height: 68px;
-  width: 66px;
+  height: 4.25rem;
+  width: 4.125rem;
 }
 
 .mobile-menu-bottom {
@@ -479,6 +479,44 @@ li .menu-item-info {
 /* Web Nav Menu */
 .web-nav-menu {
   display: none;
+}
+
+.web-nav-menu button {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.25rem;
+  padding: 0.5rem 5rem 0.5rem 0.25rem;
+  white-space: nowrap;
+  position: relative;
+  color: var(--text-primary);
+  background-color: unset;
+  border: none;
+  border-bottom: 0.125rem solid var(--blue-primary);
+  cursor: pointer;
+}
+
+.web-nav-menu button:hover {
+  border-bottom: 0.125rem solid var(--red-secondary-3);
+}
+
+.web-nav-menu button:active {
+  border-bottom: 0.125rem solid var(--red-secondary-5);
+  color: var(--red-secondary-5);
+}
+
+.web-nav-menu button:focus-visible {
+  border: 0.25rem solid var(--red-secondary);
+  margin: -0.25rem -0.25rem -0.125rem -0.25rem;
+}
+
+.web-nav-menu .open {
+  border-bottom: 0.125rem solid var(--red-secondary);
+}
+
+.web-nav-menu img {
+  height: 5.5rem;
+  width: 5.375rem;
+  cursor: pointer;
 }
 
 /* Main Landing Styles */
@@ -836,7 +874,7 @@ li .menu-item-info {
     letter-spacing: 0.0375rem;
   }
 
-  .menu-item-headers > li {
+  .menu-item-headers>li {
     padding: 0.5625rem 0;
   }
 
@@ -1296,80 +1334,8 @@ li .menu-item-info {
 
 /* Breakpoint for Extra Large Screens */
 @media screen and (min-width: 1013px) and (max-width: 1280px) {
-  .mobile-nav-menu-btn {
-    display: none;
-  }
-
-  .landing-main {
-    gap: 0;
-    background-position: 51%;
-  }
-
-  .web-nav-menu {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 0rem 4rem;
-    gap: 5rem;
-    height: 10rem;
-  }
-
-  .web-nav-menu img {
-    height: 5.5rem;
-    width: 5.375rem;
-  }
-
-  .web-nav-menu .open {
-    border-bottom: 0.125rem solid var(--red-secondary);
-  }
-
-  .web-nav-menu button {
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.25rem;
-    padding: 0.5rem 5rem 0.5rem 0.25rem;
-    white-space: nowrap;
-    position: relative;
-    color: var(--text-primary);
-    background-color: unset;
-    border: none;
-    border-bottom: 0.125rem solid var(--blue-primary);
-  }
-
-  .web-nav-menu button:hover {
-    border-bottom: 0.125rem solid var(--red-secondary-3);
-  }
-
-  .web-nav-menu button:active {
-    border-bottom: 0.125rem solid var(--red-secondary-5);
-    color: var(--red-secondary-5);
-  }
-
-  .web-nav-menu button:focus-visible {
-    border: 0.25rem solid var(--red-secondary);
-    margin: -0.25rem -0.25rem -0.125rem -0.25rem;
-  }
-
   .landing-content {
     padding: 9.25rem 5.25rem 14.75rem 19.5rem;
-  }
-
-  .landing-title {
-    font-size: 4.5rem;
-    letter-spacing: -3.6px;
-    line-height: 5.625rem;
-  }
-
-  .description {
-    font-size: 1.25rem;
-    line-height: 1.875rem;
-    letter-spacing: 1.4px;
-    margin-bottom: 2rem;
-  }
-
-  /* Collaborators Styles */
-  .collaborators {
-    display: flex;
   }
 
   .collab-label {
@@ -1392,7 +1358,85 @@ li .menu-item-info {
     padding: 7.5rem 6rem;
     gap: 9rem;
   }
+}
 
+/* Breakpoint for Extra Extra Large Screens */
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+  .landing-main {
+    min-height: 56.625rem;
+  }
+
+  .landing-content {
+    padding: 10.75rem 5.5rem 17.25rem 29.375rem;
+  }
+
+  .description {
+    letter-spacing: 1.3px;
+  }
+
+  .collab-label {
+    padding: 3rem 0.5rem 3rem 4rem;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    max-width: 21.8125rem;
+    font-family: var(--font-metropolis);
+    letter-spacing: unset;
+    font-weight: 500;
+  }
+
+  .collab-banner {
+    padding: 0 5.5rem;
+    gap: 7.5rem;
+  }
+
+  /* Use the atlas styles */
+  .use-the-atlas {
+    grid-template-columns: 1fr 1fr;
+    padding: 7.5rem 11.75rem;
+    row-gap: 10rem;
+    column-gap: 9.5rem;
+  }
+}
+
+/* Shared Breakpoint for Extra Large and Extra Extra Large Screens */
+@media screen and (min-width: 1013px) and (max-width: 1440px) {
+  .mobile-nav-menu-btn, .mobile-nav-menu {
+    display: none;
+  }
+
+  .landing-main {
+    gap: 0;
+    background-position: 51%;
+  }
+
+  .web-nav-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0rem 4rem;
+    justify-content: space-between;
+    height: 10rem;
+  }
+
+  .landing-title {
+    font-size: 4.5rem;
+    letter-spacing: -3.6px;
+    line-height: 5.625rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    letter-spacing: 1.4px;
+    margin-bottom: 2rem;
+  }
+
+  /* Collaborators Styles */
+  .collaborators {
+    display: flex;
+  }
+
+  /* Use the atlas styles */
   .use-the-atlas .atlas-item:first-child .atlas-description {
     flex-grow: 1;
   }
@@ -1471,7 +1515,7 @@ li .menu-item-info {
   .atlas-categories {
     grid-template-columns: repeat(4, 1fr);
     padding: 5rem 4.5rem 4rem 4.5rem;
-    gap: 6.75rem;
+    justify-content: space-between;
   }
 
   .disclaimer {
