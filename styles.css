@@ -269,7 +269,7 @@ body:has(>.menu-opened) {
 
 .mobile-menu-bottom {
   margin-top: 8.8rem;
-  padding: 0 0.5rem 2.5rem 1rem;
+  padding: 0 0.5rem 2.5rem 3.5rem;
 }
 
 .menu-item-headers {
@@ -280,7 +280,7 @@ body:has(>.menu-opened) {
 }
 
 .menu-item-headers>li {
-  padding: 0.5625rem 0;
+  padding: 0.75rem 0;
 }
 
 .menu-item-headers li {
@@ -288,13 +288,13 @@ body:has(>.menu-opened) {
 }
 
 .toggle {
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
   cursor: pointer;
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  font-size: 0.75rem;
-  line-height: 1.375rem;
+  gap: 0.5rem;
   font-weight: 500;
   width: max-content;
   color: var(--text-primary);
@@ -803,7 +803,7 @@ li .menu-item-info {
     background-color: var(--hra-blue);
     padding: 0.75rem 1rem 0.15rem 1rem;
   }
-  
+
   .mobile-menu-top::after {
     content: '';
     background: linear-gradient(to bottom, rgba(230, 234, 240, 1), rgba(230, 234, 240, 0));
@@ -819,10 +819,25 @@ li .menu-item-info {
     width: 3rem;
   }
 
+  .mobile-menu-bottom {
+    margin-top: 5.5rem;
+    padding: 0 0.5rem 2.5rem 1rem;
+  }
+
+  .toggle {
+    font-size: 0.75rem;
+    line-height: 1.375rem;
+    gap: 0.25rem;
+  }
+
   .menu-item {
     line-height: 1.375rem;
     font-size: 0.75rem;
     letter-spacing: 0.0375rem;
+  }
+
+  .menu-item-headers > li {
+    padding: 0.5625rem 0;
   }
 
   .menu-item img {
@@ -890,14 +905,6 @@ li .menu-item-info {
 
   .mobile-menu-top {
     padding: 2.375rem 1rem 0.25rem 2rem;
-  }
-
-  .mobile-menu-bottom {
-    padding: 0 0.5rem 2.5rem 3.5rem;
-  }
-
-  .menu-item-headers>li {
-    padding: 0.75rem 0;
   }
 
   .menu-item {
