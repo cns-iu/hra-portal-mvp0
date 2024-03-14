@@ -22,7 +22,7 @@ function hideMenu() {
 
 function largeScreenMenuButtonClickHandler(event) {
   const openClass = 'open';
-  const buttons = document.querySelectorAll('.web-nav-menu > button');
+  const buttons = document.querySelectorAll('.web-nav-menu > .menu-btns > button');
   const isClosed = !event.target.classList.contains(openClass);
   for (const button of buttons) {
     button.classList.remove(openClass);

@@ -1680,7 +1680,23 @@ li .menu-item-info {
 /* Breakpoint for screens larger than 1920px */
 @media screen and (min-width: 1921px) {
   .landing-main {
-    background: linear-gradient(90deg, #E2E6ED, #E2E6ED);
+    background-color: #dbe1e8;
+  }
+
+  .landing-main .content {
+    position: relative;
+    overflow-y: hidden;
+  }
+
+  .landing-main .content::after {
+    content: "";
+    width: 100%;
+    height: 114%;
+    position: absolute;
+    top: -34px;
+    left: 0;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 20px 26px #dbe1e8;
   }
 
   .use-the-atlas .content {
