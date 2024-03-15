@@ -38,7 +38,6 @@ function largeScreenMenuButtonClickHandler(event) {
 let scrollingHorizontally = true;
 
 banner.addEventListener("wheel", (event) => {
-  event.deltaX = 0
   if (scrollingHorizontally) {
     banner.scrollBy({
       left: event.deltaY < 0 ? -70 : 70,
