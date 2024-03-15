@@ -1697,6 +1697,7 @@ li .menu-item-info {
     left: 0;
     overflow: hidden;
     box-shadow: inset 0px 0px 20px 26px #dbe1e8;
+    pointer-events: none;
   }
 
   .use-the-atlas .content {
