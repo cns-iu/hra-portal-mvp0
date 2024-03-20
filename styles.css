@@ -1021,7 +1021,7 @@ li .menu-item-info {
   }
 
   .nested {
-    padding: 0.5rem 0 0.5rem 4rem
+    padding: 0.5rem 0 0.5rem 4rem;
   }
 
   .toggle {
@@ -1148,7 +1148,7 @@ li .menu-item-info {
   }
 
   .nested {
-    padding: 0.5rem 0 0.5rem 3rem
+    padding: 0.5rem 0 0.5rem 3rem;
   }
 
   .landing-main .content {
@@ -1250,14 +1250,40 @@ li .menu-item-info {
 /* Breakpoint for Large Screens */
 @media screen and (min-width: 769px) and (max-width: 1012px) {
   .mobile-nav-menu-btn {
-    margin: 1.5rem;
+    margin: 3rem 4rem;
+    height: 3rem;
+    width: 3rem;
   }
 
-  .mobile-nav-menu {
-    right: 2.5rem;
-    top: 4rem;
-    width: calc(100vw - 6rem);
-    height: calc(100vh - 11rem);
+  .mobile-menu-top {
+    padding: 2.375rem 1rem 0.25rem 6.5rem;
+  }
+
+  .mobile-menu-bottom {
+    padding: 0 1rem 2.5rem 6.5rem;
+  }
+
+  .menu-item {
+    gap: 0.75rem;
+  }
+
+  .menu-item:not(.s-red-3) {
+    padding: 1rem 0 1rem 2.5rem;
+  }
+
+  .submenu .s-red-3 {
+    padding: 0.5rem 0 0.5rem 2.5rem;
+    line-height: 1.6875rem;
+  }
+
+  .submenu>li>a,
+  .menu-item-info,
+  .learn-menu>ul>a {
+    padding-left: 2.5rem;
+  }
+
+  .nested {
+    padding: 0.5rem 0 0.5rem 3rem;
   }
 
   .landing-main .content {
