@@ -52,3 +52,15 @@ banner.addEventListener("wheel", (event) => {
     scrollingHorizontally = true;
   }
 });
+
+const first = document.querySelector('.menu-item-headers > li .submenu');
+const container = document.createElement('ul');
+let cs = Array.from(first.children)
+cs.map((item, index) => {
+  if (index!=0) {
+    container.appendChild(item);
+  }
+})
+const rc = document.querySelector('.menu-right');
+rc.appendChild(container);
+console.log(first);
