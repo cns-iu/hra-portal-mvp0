@@ -9,7 +9,7 @@ navMenuBtn.addEventListener('click', () => {
 });
 
 // Logic to handle the expand/collapse of the menu items
-var toggles = document.querySelectorAll('.toggle');
+const toggles = document.querySelectorAll('.toggle');
 toggles.forEach(function (toggle) {
   toggle.addEventListener('click', function () {
     this.classList.toggle('item-open');
@@ -21,16 +21,19 @@ function hideMenu() {
   navMenuBtn.classList.remove('menu-opened');
 }
 
-function largeScreenMenuButtonClickHandler(event) {
+function largeScreenMenuButtonClickHandler(event, i) {
   const openClass = 'open';
   const buttons = document.querySelectorAll('.web-nav-menu > .menu-btns > button');
+  const menus = document.querySelectorAll('.menu-wrapper > div');
   const isClosed = !event.target.classList.contains(openClass);
-  for (const button of buttons) {
-    button.classList.remove(openClass);
+  const elements = [...buttons, ...menus]
+  for (const el of elements) {
+    el.classList.remove(openClass);
   }
 
   if (isClosed) {
     event.target.classList.add(openClass);
+    menus[i].classList.add(openClass);
   }
 }
 
@@ -52,15 +55,3 @@ banner.addEventListener("wheel", (event) => {
     scrollingHorizontally = true;
   }
 });
-
-const first = document.querySelector('.menu-item-headers > li .submenu');
-const container = document.createElement('ul');
-let cs = Array.from(first.children)
-cs.map((item, index) => {
-  if (index!=0) {
-    container.appendChild(item);
-  }
-})
-const rc = document.querySelector('.menu-right');
-rc.appendChild(container);
-console.log(first);
