@@ -549,50 +549,45 @@ li .menu-item-info,
   margin: -0.25rem -0.25rem -0.125rem -0.25rem;
 }
 
-.web-nav-menu .open {
-  border-bottom: 0.125rem solid var(--red-secondary);
-}
-
-.web-nav-menu img {
+.top-navigation img {
   height: 5.5rem;
   width: 5.375rem;
   cursor: pointer;
 }
 
-.menu-wrapper > div {
-  /* display: none; */
+.menu-wrapper>div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr);
   position: absolute;
-  height: 60vh;
-  width: 100%;
+  max-height: 60vh;
+  width: calc(100vw - 9rem);
   background-color: var(--hra-blue-3);
   top: 9rem;
   z-index: 1;
-  padding-top: 1rem;
+  padding: 1rem 4.5rem 3rem 4.5rem;
+}
+
+.menu-wrapper>div:not(.open) {
+  display: none;
 }
 
 .web-nav-menu:has(button.open) {
   background-color: var(--hra-blue-3);
 }
 
-.access-data-menu {
-  display: flex;
-  gap: 3.5rem;
-  margin: 0 4.5rem 3rem 4.5rem;
-}
-
 .menu-left {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0 1.5rem;
-  max-width: 448px;
+  padding: 0 3.5rem 0 1.5rem;
   border-right: solid 2px rgba(32, 30, 61, 1);
 }
 
-.menu-left img {
+.web-nav-menu .menu-left>img {
   height: 6rem;
   width: 6rem;
-  margin-top: 5.5rem;
+  margin: 0;
 }
 
 .menu-wrapper a.s-red-3 {
@@ -611,8 +606,7 @@ li .menu-item-info,
 }
 
 .menu-right {
-  padding: 1rem 0;
-  margin: 0;
+  margin: 1rem 0;
   height: 100%;
   column-gap: 4rem;
   display: flex;
@@ -622,6 +616,55 @@ li .menu-item-info,
 
 .menu-right ul a {
   padding-left: 0;
+}
+
+.menu-wrapper .access-data-menu {
+  grid-template-columns: 1fr 2fr;
+}
+
+.access-data-menu .menu-right {
+  margin-left: 5rem;
+}
+
+.access-data-menu .menu-right .menu-item {
+  max-width: 360px;
+}
+
+.explore-menu .menu-left {
+  align-items: center;
+  padding: 0;
+}
+
+.explore-menu .menu-right {
+  margin-left: 128px;
+}
+
+.contribute-menu .menu-left {
+  padding: 40px 80px 40px 7rem;
+}
+
+.contribute-menu .menu-right {
+  row-gap: 1rem;
+  justify-content: flex-end;
+  padding: 40px 0;
+  height: calc(100% - 80px);
+  margin-left: 112px;
+}
+
+.menu-wrapper .web-learn-menu {
+  grid-template-columns: 1fr 2fr;
+  max-height: 374px;
+}
+
+.web-learn-menu .menu-left {
+  justify-content: center;
+  margin-left: 6rem;
+}
+
+.web-learn-menu .menu-right {
+  margin: 0;
+  margin-left: 4.5rem;
+  padding: 1rem 0;
 }
 
 /* Main Landing Styles */
@@ -1484,6 +1527,9 @@ li .menu-item-info,
 
 /* Common Breakpoint for Extra Large and all screens bigger than it */
 @media screen and (min-width: 1013px) {
+  .web-nav-menu {
+    display: unset;
+  }
 
   .mobile-nav-menu-btn,
   .mobile-nav-menu {
@@ -1495,7 +1541,7 @@ li .menu-item-info,
     background-position: 51%;
   }
 
-  .web-nav-menu {
+  .web-nav-menu .top-navigation {
     position: relative;
     display: flex;
     align-items: center;
@@ -1503,7 +1549,7 @@ li .menu-item-info,
     height: 9rem;
   }
 
-  .web-nav-menu-items .menu-wrapper > div:not(.open) {
+  .menu-wrapper>div:not(.open) {
     display: none;
   }
 
@@ -1515,6 +1561,14 @@ li .menu-item-info,
     display: flex;
     justify-content: space-between;
     width: 100%;
+  }
+
+  .menu-btns button.open {
+    border-bottom: 0.125rem solid var(--red-secondary);
+  }
+
+  .web-learn-menu .menu-item-info {
+    padding: 0.5rem 1.5rem;
   }
 
   .landing-title {
@@ -1595,6 +1649,10 @@ li .menu-item-info,
     padding: 9.25rem 5.25rem 14.75rem 19.5rem;
   }
 
+  .web-learn-menu .menu-item-info {
+    max-width: 242px;
+  }
+
   /* Collaborators Styles */
   .collab-label {
     padding: 4.5rem 2rem 4.5rem 4rem;
@@ -1655,6 +1713,36 @@ li .menu-item-info,
 
   .web-nav-menu img {
     margin-right: 6.75rem;
+  }
+
+  .menu-left {
+    padding: 0 3.5rem 0 0;
+  }
+
+  .access-data-menu .menu-left {
+    max-width: 408px;
+    padding-left: 1rem;
+    padding-top: 5.5rem;
+  }
+
+  .explore-menu .menu-left {
+    justify-content: center;
+  }
+
+  .explore-menu .menu-left > img {
+    margin-left: -5rem;
+  }
+
+  .contribute-menu .menu-left {
+    padding: 40px 80px 40px 11rem;
+  }
+
+  .web-learn-menu .menu-left {
+    max-width: 13rem;
+  }
+
+  .web-learn-menu .menu-right {
+    margin-left: 0;
   }
 
   .menu-btns {
