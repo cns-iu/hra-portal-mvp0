@@ -640,7 +640,7 @@ li .menu-item-info,
 
 .menu-wrapper .access-data-menu {
   grid-template-columns: 1fr 2fr;
-  max-height: 49vh;
+  max-height: 449px;
 }
 
 .access-data-menu .menu-right {
