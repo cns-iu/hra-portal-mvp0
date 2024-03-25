@@ -401,35 +401,48 @@ body:has(>.menu-opened) {
 
   .menu-item:hover,
   .toggle:hover,
-  .learn-menu li .menu-item-info:hover {
+  .learn-menu li .menu-item-info:hover,
+  ul.atlas-category li:hover>a,
+  .atlas-category>a:hover,
+  .menu-wrapper .menu-item:hover,
+  .web-learn-menu .menu-item-info:hover {
     color: var(--red-secondary-4);
   }
 
   .menu-item:active,
   .toggle:active,
-  .learn-menu li .menu-item-info:active {
+  .learn-menu li .menu-item-info:active,
+  ul.atlas-category li:active>a,
+  .atlas-category>a:active,
+  .menu-wrapper .menu-item:active,
+  .web-learn-menu .menu-item-info:active {
     color: var(--red-secondary-5);
   }
 
   .menu-item:focus-visible,
   .toggle:focus-visible,
-  .learn-menu li .menu-item-info:focus-visible {
+  .learn-menu li .menu-item-info:focus-visible,
+  ul.atlas-category li>a:focus-visible,
+  .atlas-category>a:focus-visible,
+  .menu-wrapper .menu-item:focus-visible,
+  .web-learn-menu .menu-item-info:focus-visible {
     color: var(--text-primary);
-    border: solid var(--red-secondary) 0.125rem;
-    outline: none;
+    outline: solid var(--red-secondary) 0.125rem;
   }
 
   .menu-item:hover .arrow-red,
+  .menu-item:hover .open-in-new,
   .toggle:hover .expand {
     background-color: var(--red-secondary-4);
   }
 
   .menu-item:active .arrow-red,
+  .menu-item:active .open-in-new,
   .toggle:active .expand {
     background-color: var(--red-secondary-5);
   }
 
-  .menu-item:focus .arrow-red,
+  .menu-item:focus-visible .arrow-red,
   .toggle:focus .expand {
     background-color: var(--text-primary);
   }
@@ -462,6 +475,7 @@ li .menu-item-info,
   font-size: 1rem;
   color: var(--gray-secondary-2);
   font-family: var(--font-omnes);
+  width: fit-content;
 }
 
 .nested {
@@ -492,6 +506,11 @@ li .menu-item-info,
 
 .close {
   mask: url(assets/images/close.svg) no-repeat center;
+  background-color: var(--text-primary);
+}
+
+.open-in-new {
+  mask: url(assets/images/open_in_new.svg);
   background-color: var(--text-primary);
 }
 
@@ -547,6 +566,7 @@ li .menu-item-info,
 .web-nav-menu button:focus-visible {
   border: 0.25rem solid var(--red-secondary);
   margin: -0.25rem -0.25rem -0.125rem -0.25rem;
+  outline: none;
 }
 
 .top-navigation img {
@@ -561,7 +581,7 @@ li .menu-item-info,
   grid-template-rows: minmax(0, 1fr);
   position: absolute;
   max-height: 60vh;
-  width: calc(100vw - 9rem);
+  width: calc(100% - 9rem);
   background-color: var(--hra-blue-3);
   top: 9rem;
   z-index: 1;
@@ -581,7 +601,7 @@ li .menu-item-info,
   flex-direction: column;
   gap: 1rem;
   padding: 0 3.5rem 0 1.5rem;
-  border-right: solid 2px rgba(32, 30, 61, 1);
+  border-right: solid 1px rgba(32, 30, 61, 1);
 }
 
 .web-nav-menu .menu-left>img {
@@ -620,6 +640,7 @@ li .menu-item-info,
 
 .menu-wrapper .access-data-menu {
   grid-template-columns: 1fr 2fr;
+  max-height: 49vh;
 }
 
 .access-data-menu .menu-right {
@@ -633,6 +654,7 @@ li .menu-item-info,
 .explore-menu .menu-left {
   align-items: center;
   padding: 0;
+  justify-content: center;
 }
 
 .explore-menu .menu-right {
@@ -940,7 +962,7 @@ li .menu-item-info,
   padding: 5.5rem 1.5rem 6rem 1.5rem;
 }
 
-.atlas-categories span {
+.atlas-categories>ul>a {
   display: inline-block;
   color: var(--red-secondary-3);
   margin-bottom: 1.5rem;
@@ -957,22 +979,19 @@ li .menu-item-info,
   margin: 0;
 }
 
-.atlas-category span {
-  margin: 0.5rem;
+.atlas-category>a {
+  padding: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.atlas-categories li,
-.atlas-categories a {
+.atlas-categories li>a {
+  display: block;
+  padding: 0.5rem;
+  line-height: 1.5rem;
   list-style-type: none;
   font-family: var(--font-omnes);
   font-weight: 300;
   color: var(--text-primary);
-}
-
-.atlas-categories li {
-  padding: 0.5rem;
-  line-height: 1.5rem;
 }
 
 .disclaimer {
@@ -1649,6 +1668,11 @@ li .menu-item-info,
     padding: 9.25rem 5.25rem 14.75rem 19.5rem;
   }
 
+  .access-data-menu .menu-left {
+    width: 424px;
+    padding: 5.5rem 0 5.5rem 1.5rem;
+  }
+
   .web-learn-menu .menu-item-info {
     max-width: 242px;
   }
@@ -1711,34 +1735,39 @@ li .menu-item-info,
     min-height: 56.625rem;
   }
 
-  .web-nav-menu img {
+  /* .web-nav-menu img {
     margin-right: 6.75rem;
-  }
+  } */
 
   .menu-left {
     padding: 0 3.5rem 0 0;
   }
 
   .access-data-menu .menu-left {
-    max-width: 408px;
-    padding-left: 1rem;
-    padding-top: 5.5rem;
+    width: 27rem;
+    padding: 5.5rem 0 0 4.5rem;
   }
 
   .explore-menu .menu-left {
     justify-content: center;
   }
 
-  .explore-menu .menu-left > img {
+  .explore-menu .menu-left>img {
     margin-left: -5rem;
   }
 
   .contribute-menu .menu-left {
-    padding: 40px 80px 40px 11rem;
+    padding: 40px 0 40px 10rem;
+    width: 486px;
+  }
+
+  .contribute-menu .menu-right {
+    margin-left: 136px;
   }
 
   .web-learn-menu .menu-left {
     max-width: 13rem;
+    margin-left: 6.5rem;
   }
 
   .web-learn-menu .menu-right {
@@ -1816,12 +1845,56 @@ li .menu-item-info,
     min-height: 52.125rem;
   }
 
-  .web-nav-menu img {
+  .web-nav-menu .top-navigation {
+    height: 10rem;
+    padding: 0 5rem;
+  }
+
+  .web-nav-menu .top-navigation img {
     margin-right: 17.75rem;
+  }
+
+  .menu-wrapper>div {
+    /* height: calc(100% - 21rem); */
+    max-height: 535px;
+    top: 10rem;
   }
 
   .menu-btns {
     max-width: 70rem;
+  }
+
+  .access-data-menu .menu-left {
+    width: 27rem;
+    padding: 6rem 32px 0 8.5rem;
+  }
+
+  .access-data-menu .menu-right {
+    margin: 0;
+    margin-left: 8rem;
+  }
+
+  .contribute-menu .menu-left {
+    margin-left: 12.125rem;
+    padding: 80px 0;
+    justify-content: flex-end;
+  }
+
+  .contribute-menu .menu-right {
+    height: unset;
+    margin: 2rem 0;
+    margin-left: 11.5rem;
+  }
+
+  .menu-wrapper .web-learn-menu {
+    padding: 1rem 14.375rem 3rem 14.375rem;
+    width: calc(100% - 28.75rem);
+  }
+
+  .web-learn-menu .menu-left {
+    max-width: 448px;
+    margin-left: 0;
+    padding: 0;
   }
 
   .landing-content {
@@ -1904,7 +1977,7 @@ li .menu-item-info,
 /* Breakpoint for screens larger than 1920px */
 @media screen and (min-width: 1921px) {
   .landing-main {
-    background-color: #dbe1e8;
+    background-color: var(--hra-blue-3);
   }
 
   .landing-main .content {
@@ -1920,7 +1993,7 @@ li .menu-item-info,
     top: -34px;
     left: 0;
     overflow: hidden;
-    box-shadow: inset 0px 0px 20px 26px #dbe1e8;
+    box-shadow: inset 0px 0px 20px 26px var(--hra-blue-3);
     pointer-events: none;
   }
 
