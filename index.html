@@ -81,7 +81,7 @@
             <li>
               <a class="menu-item" href="https://apps.humanatlas.io/api/" target="_blank">
                 HRA APIs
-                <img src="assets/images/open_in_new.svg" />
+                <span class="svg-icon open-in-new"></span>
               </a>
             </li>
           </ul>
@@ -235,12 +235,148 @@
   <section class="landing-main">
     <div class="content">
       <div class="web-nav-menu">
-        <img src="assets/logos/hra_logo_red.svg">
-        <div class="menu-btns">
-          <button onclick="largeScreenMenuButtonClickHandler(event)">Access Data</button>
-          <button onclick="largeScreenMenuButtonClickHandler(event)">Explore</button>
-          <button onclick="largeScreenMenuButtonClickHandler(event)">Contribute</button>
-          <button onclick="largeScreenMenuButtonClickHandler(event)">Learn</button>
+        <div class="top-navigation">
+          <img src="assets/logos/hra_logo_red.svg">
+          <div class="menu-btns">
+            <button onclick="largeScreenMenuButtonClickHandler(event, 0)">Access Data</button>
+            <button onclick="largeScreenMenuButtonClickHandler(event, 1)">Explore</button>
+            <button onclick="largeScreenMenuButtonClickHandler(event, 2)">Contribute</button>
+            <button onclick="largeScreenMenuButtonClickHandler(event, 3)">Learn</button>
+          </div>
+        </div>
+        <div class="menu-wrapper">
+          <div class="access-data-menu">
+            <div class="menu-left">
+              <img src="assets/logos/access_data.svg">
+              <a class="menu-item s-red-3">
+                Access atlas data
+                <span class="svg-icon arrow arrow-red"></span>
+              </a>
+              <span class="menu-item-info">Learn about the digital objects constructing the atlas.</span>
+            </div>
+            <div class="menu-right">
+              <a class="menu-item s-red-3">
+                Digital Object Database
+                <span class="svg-icon arrow arrow-red"></span>
+              </a>
+              <a class="menu-item">
+                Anatomical Structures, Cell Types, and Biomarkers (ASCT+B) Tables
+              </a>
+              <span class="menu-item-info">File formats: GRAPH, Turtle, CSV</span>
+              <a class="menu-item">
+                Vasculature Common Coordinate Framework (VCCF)
+              </a>
+              <span class="menu-item-info">File formats: GRAPH, Turtle, CSV, GLB</span>
+              <a class="menu-item">
+                Organ Mapping Antibody Panel (OMAP) Tables
+              </a>
+              <span class="menu-item-info">File formats: GRAPH, Turtle, CSV</span>
+              <a class="menu-item">
+                Functional Tissue Unit (FTU) Illustrations
+              </a>
+              <span class="menu-item-info">File formats: PNG, SVG, AI</span>
+              <a class="menu-item">
+                3D Organ Models
+              </a>
+              <span class="menu-item-info margin-b-3">File formats: GLB files</span>
+              <a class="menu-item s-red-3">
+                APIs
+                <span class="svg-icon arrow arrow-red"></span>
+              </a>
+              <a class="menu-item" href="https://apps.humanatlas.io/api/" target="_blank">
+                HRA APIs
+                <span class="svg-icon open-in-new"></span>
+              </a>
+            </div>
+          </div>
+          <div class="explore-menu">
+            <div class="menu-left">
+              <img src="assets/logos/explore.svg">
+              <a class="menu-item s-red-3">
+                Explore All Tools
+                <span class="svg-icon arrow arrow-red"></span>
+              </a>
+            </div>
+            <div class="menu-right">
+              <a class="menu-item" href="https://apps.humanatlas.io/" target="_blank">
+                Atlas Applications
+                <span class="svg-icon open-in-new"></span>
+              </a>
+              <a class="menu-item" href="https://apps.humanatlas.io/eui/" target="_blank">
+                Exploration User Interface (EUI)
+                <span class="svg-icon open-in-new"></span>
+              </a>
+              <a class="menu-item" href="https://hubmapconsortium.github.io/hra-ui/apps/ftu-ui/#/" target="_blank">
+                Functional Tissue Unit (FTU) Explorer
+                <span class="svg-icon open-in-new"></span>
+              </a>
+              <a class="menu-item" href="https://hubmapconsortium.github.io/tissue-bar-graphs/" target="_blank">
+                Cell Population Comparison
+                <span class="svg-icon open-in-new"></span>
+              </a>
+              <a class="menu-item">
+                VR Organ Gallery
+                <span class="svg-icon open-in-new"></span>
+              </a>
+            </div>
+          </div>
+          <div class="contribute-menu">
+            <div class="menu-left">
+              <img src="assets/logos/contribute.svg">
+              <a class="menu-item s-red-3">
+                Contribute
+                <span class="svg-icon arrow arrow-red"></span>
+              </a>
+              <a class="menu-item" href="https://iu.co1.qualtrics.com/jfe/form/SV_bpaBhIr8XfdiNRH" target="_blank">
+                Join the HRA Working Group
+                <span class="svg-icon open-in-new"></span>
+              </a>
+              <a class="menu-item" href="https://hubmapconsortium.github.io/ccf-asct-reporter/" target="_blank">
+                Anatomical Structures, Cell Types, and Biomarker (ASCT+B) Reporter
+                <span class="svg-icon open-in-new"></span>
+              </a>
+            </div>
+            <div class="menu-right">
+              <a class="menu-item s-red-3">
+                Tissue Block Registration
+                <span class="svg-icon arrow arrow-red"></span>
+              </a>
+              <a class="menu-item" href="https://hubmapconsortium.github.io/ccf-ui/rui/" target="_blank">
+                Registration User Interface (RUI)
+                <span class="svg-icon open-in-new"></span>
+              </a>
+              <a class="menu-item" href="https://github.com/hubmapconsortium/hra-millitome" target="_blank">
+                Millitome
+                <span class="svg-icon open-in-new"></span>
+              </a>
+            </div>
+          </div>
+          <div class="web-learn-menu">
+            <div class="menu-left">
+              <img src="assets/logos/contribute.svg">
+              <a class="menu-item s-red-3">
+                About the HRA
+                <span class="svg-icon arrow arrow-red"></span>
+              </a>
+            </div>
+            <div class="menu-right">
+              <a class="menu-item">
+                Learning Resources
+              </a>
+              <a class="menu-item-info">Human Atlas Stories</a>
+              <a class="menu-item-info">Visible Human Massive Online Open Course (VHMOOC)</a>
+              <a class="menu-item-info">YouTube Videos</a>
+              <a class="menu-item-info">Publications</a>
+              <a class="menu-item-info">SOPs</a>
+              <a class="menu-item-info">HRA Design System</a>
+              <a class="menu-item-info">GitHub Repositories</a>
+              <a class="menu-item">Frequently Asked Questions (FAQs)</a>
+              <a class="menu-item">Release Notes</a>
+              <a class="menu-item">Timeline</a>
+              <a class="menu-item">Editorial Board</a>
+              <a class="menu-item">Funding</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="landing-content">
@@ -411,14 +547,16 @@
       <div class="footer-bottom">
         <div class="atlas-categories">
           <ul class="atlas-category">
-            <span>Access Data</span>
+              <a href="https://lod.humanatlas.io/" target="_blank">
+                Access Data
+              </a>
             <li><a href='https://lod.humanatlas.io/' target="_blank">Digital Object Database</a></li>
             <li>
               <a href="https://apps.humanatlas.io/api/" target="_blank">HRA APIs</a>
             </li>
           </ul>
           <ul class="atlas-category">
-            <span>Explore</span>
+            <a href="https://apps.humanatlas.io/" target="_blank">Explore</a>
             <li>
               <a href="https://apps.humanatlas.io/" target="_blank">Atlas Applications</a>
             </li>
@@ -434,7 +572,7 @@
             <li><a href='https://humanatlas.io/organ-gallery-in-vr' target="_blank">VR Organ Gallary</a></li>
           </ul>
           <ul class="atlas-category">
-            <span>Contribute</span>
+            <a href="https://iu.co1.qualtrics.com/jfe/form/SV_bpaBhIr8XfdiNRH" target="_blank">Contribute</a>
             <li><a href="https://iu.co1.qualtrics.com/jfe/form/SV_bpaBhIr8XfdiNRH" target="_blank">
                 Join the HRA Working Group</a>
             </li>
@@ -460,7 +598,7 @@
             </li>
           </ul>
           <ul class="atlas-category">
-            <span>Learn</span>
+            <a href="https://humanatlas.io/overview-training-outreach" target="_blank">Learn</a>
             <li>
               <a href="https://humanatlas.io/faq/omap" target="_blank">
                 FAQs
