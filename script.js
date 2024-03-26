@@ -11,6 +11,13 @@ navMenuBtn.addEventListener('click', () => {
   navMenu.classList.add('animated');
 });
 
+//Logic to hide opened menu when window size is too big
+window.addEventListener('resize', (e) => {
+  if (e.target.innerWidth >= 1280) {
+    navMenuBtn.classList.remove('menu-opened');
+  }
+})
+
 // Logic to handle the expand/collapse of the menu items
 const toggles = document.querySelectorAll('.toggle');
 toggles.forEach(function (toggle) {
