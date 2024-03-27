@@ -62,21 +62,29 @@ function largeScreenMenuButtonClickHandler(event, i) {
   }
 }
 
-// Logic to handle the scrolling of collaborators banner - (WIP)
-let scrollingHorizontally = true;
+const sticky_section = document.querySelector('.collab-sticky');
 
-banner.addEventListener("wheel", (event) => {
-  if (scrollingHorizontally) {
-    banner.scrollBy({
-      left: event.deltaY < 0 ? -70 : 70,
-    });
-    event.preventDefault();
-    if (banner.scrollLeft >= banner.scrollWidth - banner.clientWidth - 100 && event.deltaY > 0) {
-      scrollingHorizontally = false;
-    } else if (banner.scrollLeft === 0 && event.deltaY < 0) {
-      scrollingHorizontally = false;
-    }
-  } else {
-    scrollingHorizontally = true;
-  }
+window.addEventListener('scroll', () => {
+  transform(sticky_section);
 });
+
+// Function to left scroll collaborators banner
+function transform(section) {
+  const scrollElement = section.querySelector('.scroll-section');
+  const sideElement = section.querySelector('.collab-label');
+  const scroll = window.scrollY;
+  const viewHeight = window.innerHeight;
+  const { width: elementWidth, height: elementHeight } = scrollElement.getBoundingClientRect();
+  const elementOffset = scrollElement.offsetTop;
+  const { width: sectionElementWidth } = section.getBoundingClientRect();
+  const { width: sideElementWidth } = sideElement.getBoundingClientRect();
+  const rightOffset = 200;
+
+  const start = elementOffset - viewHeight / 2;
+  const end = start + elementHeight;
+  const clampedScroll = Math.min(Math.max(scroll, start), end);
+  const translationFactor = (clampedScroll - start) / (end - start);
+  const translation = translationFactor * (elementWidth + sectionElementWidth + sideElementWidth - rightOffset);
+
+  scrollElement.style.transform = `translate3d(${-translation}px, 0, 0)`;
+}
