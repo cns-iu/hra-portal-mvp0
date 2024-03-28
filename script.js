@@ -62,6 +62,7 @@ function largeScreenMenuButtonClickHandler(event, i) {
   }
 }
 
+// Scroll Event to scroll the banner left/right
 const sticky_section = document.querySelector('.collab-sticky');
 
 window.addEventListener('scroll', () => {
@@ -74,17 +75,18 @@ function transform(section) {
   const sideElement = section.querySelector('.collab-label');
   const scroll = window.scrollY;
   const viewHeight = window.innerHeight;
-  const { width: elementWidth, height: elementHeight } = scrollElement.getBoundingClientRect();
+  const viewWidth = window.innerWidth;
+  const { width: elementWidth, height: elementHeight } = scrollElement.getBoundingClientRect(); //actual banner
   const elementOffset = scrollElement.offsetTop;
   const { width: sectionElementWidth } = section.getBoundingClientRect();
   const { width: sideElementWidth } = sideElement.getBoundingClientRect();
-  const rightOffset = 200;
+  const leftOffset = viewWidth > 768 ? sideElementWidth : 0;
 
   const start = elementOffset - viewHeight / 2;
   const end = start + elementHeight;
   const clampedScroll = Math.min(Math.max(scroll, start), end);
   const translationFactor = (clampedScroll - start) / (end - start);
-  const translation = translationFactor * (elementWidth + sectionElementWidth + sideElementWidth - rightOffset);
+  const translation = translationFactor * Math.max(elementWidth - sectionElementWidth + leftOffset, 0);
 
   scrollElement.style.transform = `translate3d(${-translation}px, 0, 0)`;
 }
