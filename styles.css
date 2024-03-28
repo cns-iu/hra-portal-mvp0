@@ -150,9 +150,9 @@ ul {
   list-style-type: none;
 }
 
-@media screen and (max-width: 1920px) {
-  .wrapper {
-    max-width: 100vw;
+@media screen and (max-width: 768px) {
+  .collaborators>div.collab-sticky {
+    display: grid;
   }
 }
 
@@ -208,7 +208,7 @@ a {
 .mobile-nav-menu-btn {
   cursor: pointer;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   height: 2.5rem;
   width: 2.5rem;
@@ -237,7 +237,7 @@ a {
 
 /* Mobile Navigation Menu Styles */
 .mobile-nav-menu {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   overflow-y: scroll;
   background-color: var(--hra-blue-3);
@@ -801,6 +801,16 @@ li .menu-item-info,
 }
 
 /* Collaborators Styles */
+
+.collaborators .collab-sticky {
+  overflow: hidden;
+}
+
+.scroll-section {
+  position: relative;
+  will-change: transform;
+}
+
 .collaborators {
   background-color: var(--hra-blue-2);
 }
@@ -810,6 +820,9 @@ li .menu-item-info,
 }
 
 .collab-label {
+  z-index: 1;
+  flex-shrink: 0;
+  background-color: var(--hra-blue-2);
   font-family: var(--font-omnes);
   color: white;
   padding: 5rem 1.5rem 2.5rem;
@@ -822,8 +835,6 @@ li .menu-item-info,
 .collab-banner {
   display: flex;
   align-items: center;
-  max-width: 100%;
-  overflow-x: scroll;
   gap: 4rem;
   padding: 0 4.45rem;
   padding-bottom: 6.875rem;
@@ -886,14 +897,8 @@ li .menu-item-info,
 }
 
 .hra img {
-  height: 7.875rem;
-  width: 7.875rem;
-}
-
-.hra span {
-  font-weight: 400;
-  color: white;
-  line-height: 2rem;
+  height: 126px;
+  width: 302px;
 }
 
 .copyright {
@@ -1096,6 +1101,10 @@ li .menu-item-info,
     mask-size: 1rem 1rem;
   }
 
+  .collab-label {
+    max-width: calc(100vw - 3rem);
+  }
+
   .atlas-logo {
     height: 4.5rem;
     width: 4.5rem;
@@ -1110,12 +1119,13 @@ li .menu-item-info,
   }
 
   .hra img {
-    height: 6.5rem;
-    width: 6.25rem;
+    width: 247px;
+    height: 104px;
   }
 
-  .hra span {
-    font-weight: 300;
+  .open-in-new {
+    mask-size: 1rem 1rem;
+    margin: 0;
   }
 }
 
@@ -1218,11 +1228,6 @@ li .menu-item-info,
     padding: 7.5rem 5rem;
   }
 
-  .hra span {
-    font-weight: 300;
-    font-size: 2.25rem;
-  }
-
   .social-media {
     gap: 1rem;
   }
@@ -1303,6 +1308,7 @@ li .menu-item-info,
 
   /* Collaborators Styles */
   .collab-label {
+    max-width: calc(100vw - 12rem);
     font-family: var(--font-metropolis);
     font-weight: 500;
     padding: 4rem 6rem 2rem 6rem;
@@ -1342,12 +1348,6 @@ li .menu-item-info,
 
   .hra {
     margin-bottom: 0.8125rem;
-  }
-
-  .hra span {
-    font-weight: 300;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
   }
 
   .copyright {
@@ -1448,7 +1448,7 @@ li .menu-item-info,
     font-size: 1.25rem;
     font-weight: 400;
     letter-spacing: 0.0875rem;
-    min-width: 24.5rem;
+    max-width: 24.5rem;
   }
 
   .collab-banner {
@@ -1487,11 +1487,6 @@ li .menu-item-info,
 
   .hra {
     margin-bottom: 1rem;
-  }
-
-  .hra span {
-    line-height: 2.5rem;
-    font-size: 2rem;
   }
 
   .copyright {
@@ -1612,11 +1607,6 @@ li .menu-item-info,
   }
 
   /* Footer Top Styles */
-  .hra span {
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-
   .social-media {
     margin: 0;
     gap: 1rem;
@@ -1665,7 +1655,7 @@ li .menu-item-info,
   /* Collaborators Styles */
   .collab-label {
     padding: 4.5rem 2rem 4.5rem 4rem;
-    min-width: 21.8125rem;
+    max-width: 21.8125rem;
     font-weight: 500;
     font-size: 1.5rem;
     line-height: 2.25rem;
