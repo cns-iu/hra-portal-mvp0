@@ -381,6 +381,7 @@ body:has(>.menu-opened) {
   padding: 0.3125rem 0;
   font-weight: 500;
   cursor: pointer;
+  width: fit-content;
 }
 
 @media(pointer: fine) {
@@ -753,6 +754,7 @@ li .menu-item-info,
 
 .primary-btn:focus {
   padding: 0;
+  outline: none;
 }
 
 .primary-btn:focus .focus {
@@ -789,6 +791,10 @@ li .menu-item-info,
 
   .primary-btn:focus .arrow-white {
     background-color: var(--text-primary);
+  }
+
+  .primary-btn a:focus {
+    outline: none;
   }
 }
 
@@ -911,15 +917,19 @@ li .menu-item-info,
   margin-bottom: 3rem;
 }
 
+.social-media a:focus {
+  outline: none;
+}
+
 .social-media .social-link :is(.default, .hover, .active, .focus) {
   display: none;
 }
 
-.social-media .social-link:not(:active, :hover, :focus) .default {
+.social-media .social-link:not(:active, :hover, :focus-visible) .default {
   display: unset;
 }
 
-.social-media .social-link:focus:not(:hover, :active) .focus {
+.social-media .social-link:focus-visible:not(:hover, :active) .focus {
   display: unset;
 }
 
