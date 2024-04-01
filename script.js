@@ -18,12 +18,32 @@ window.addEventListener('resize', (e) => {
   }
 })
 
-// Logic to handle the expand/collapse of the menu items
+// Logic to add tabindex to the menu item anchor tags
 const toggles = document.querySelectorAll('.toggle');
+window.addEventListener('DOMContentLoaded', () => {
+  toggles.forEach((toggle) => {
+    const anchors = toggle.nextElementSibling.querySelectorAll('a');
+    anchors.forEach((a) => {
+      a.setAttribute('tabindex', '-1');
+    })
+  })
+})
+
+// Logic to handle the expand/collapse of the menu items
 toggles.forEach(function (toggle) {
   toggle.addEventListener('click', function () {
     this.classList.toggle('item-open');
     this.nextElementSibling.classList.add('animated')
+    const anchors = this.nextElementSibling.querySelectorAll('a');
+    if (this.classList.contains('item-open')) {
+      anchors.forEach((anchor) => {
+        anchor.removeAttribute('tabindex');
+      })
+    } else {
+      anchors.forEach((anchor) => {
+        anchor.setAttribute('tabindex', '-1');
+      })
+    }
   });
 });
 
