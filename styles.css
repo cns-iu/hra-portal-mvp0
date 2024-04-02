@@ -1650,6 +1650,10 @@ li .menu-item-info,
 
 /* Breakpoint for Extra Large Screen */
 @media screen and (min-width: 1013px) and (max-width: 1280px) {
+  .landing-main .content {
+    background-position: 20%;
+  }
+
   .menu-btns {
     margin: 0 auto;
   }
@@ -1928,7 +1932,7 @@ li .menu-item-info,
   /* Footer Styles */
   .footer .content {
     display: grid;
-    grid-template-columns: 34.75rem auto;
+    grid-template-columns: 1fr 2fr;
   }
 
   .copyright {
@@ -1947,7 +1951,7 @@ li .menu-item-info,
   }
 
   .footer-top {
-    padding: 7.6875rem 5.875rem;
+    padding: 7.6875rem 4.5rem;
   }
 }
 
@@ -1964,11 +1968,20 @@ li .menu-item-info,
   }
 
   .atlas-categories {
-    padding: 10.625rem 6.5rem 6rem 6.5rem;
+    padding: 10.625rem 4.5rem 6rem 4.5rem;
+    gap: 1.5rem;
+  }
+
+  .atlas-categories ul li a {
+    width: max-content;
+  }
+
+  .social-media {
+    width: calc(100% - 7rem);
   }
 
   .disclaimer {
-    padding: 0 6.5rem 7.59375rem 6.5rem;
+    padding: 0 4.5rem 7.59375rem 4.5rem;
   }
 }
 
@@ -2003,6 +2016,10 @@ li .menu-item-info,
   .footer {
     background: linear-gradient(to right, var(--blue-primary) 0%, var(--blue-primary) 50%,
         var(--hra-blue) 50%, var(--hra-blue) 100%) no-repeat;
+  }
+
+  .footer-top {
+    padding: 7.6875rem 5.875rem;
   }
 
   .atlas-categories {

@@ -110,3 +110,8 @@ function transform(section) {
 
   scrollElement.style.transform = `translate3d(${-translation}px, 0, 0)`;
 }
+
+const anchors = document.querySelectorAll('a')
+anchors.forEach((anchor) => {
+  console.log(anchor.href);
+})
