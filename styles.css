@@ -414,7 +414,7 @@ body:has(>.menu-opened) {
   .menu-wrapper .menu-item:focus-visible,
   .web-learn-menu .menu-item-info:focus-visible {
     color: var(--text-primary);
-    outline: solid var(--red-secondary) 0.125rem;
+    outline: solid var(--red-secondary) 0.25rem;
   }
 
   .menu-item:hover .arrow-red,
@@ -558,7 +558,7 @@ li .menu-item-info,
   color: var(--red-secondary-5);
 }
 
-.web-nav-menu button:focus-visible {
+.web-nav-menu .menu-btns button:focus-visible {
   border: 0.25rem solid var(--red-secondary);
   margin: -0.25rem -0.25rem -0.125rem -0.25rem;
   outline: none;
@@ -602,22 +602,22 @@ li .menu-item-info,
 .web-nav-menu .menu-left>img {
   height: 6rem;
   width: 6rem;
-  margin: 0;
+  margin: 0 0 0 1.5rem;
 }
 
 .menu-wrapper a.s-red-3 {
   color: var(--red-secondary-3);
   font-size: 1.125rem;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1.5rem;
   line-height: 1.6875rem;
 }
 
 .menu-wrapper .menu-item-info {
-  padding: 0;
+  padding: 0 0 0 1.5rem;
 }
 
 .menu-wrapper .menu-item {
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
 }
 
 .menu-right {
@@ -639,7 +639,7 @@ li .menu-item-info,
 }
 
 .access-data-menu .menu-right {
-  margin-left: 5rem;
+  margin-left: 3.5rem;
 }
 
 .access-data-menu .menu-right .menu-item {
@@ -653,7 +653,7 @@ li .menu-item-info,
 }
 
 .explore-menu .menu-right {
-  margin-left: 8rem;
+  margin-left: 6.5rem;
 }
 
 .contribute-menu .menu-left {
@@ -665,7 +665,7 @@ li .menu-item-info,
   justify-content: flex-end;
   padding: 40px 0;
   height: calc(100% - 5rem);
-  margin-left: 7rem;
+  margin-left: 5.5rem;
 }
 
 .menu-wrapper .web-learn-menu {
@@ -675,12 +675,12 @@ li .menu-item-info,
 
 .web-learn-menu .menu-left {
   justify-content: center;
-  margin-left: 6rem;
+  margin-left: 4.5rem;
 }
 
 .web-learn-menu .menu-right {
   margin: 0;
-  margin-left: 4.5rem;
+  margin-left: 3rem;
   padding: 1rem 0;
 }
 
@@ -1074,6 +1074,7 @@ li .menu-item-info,
     letter-spacing: 0.006875rem;
     font-weight: 400;
     font-family: var(--font-metropolis);
+    margin-left: 0.75rem;
   }
 
   .learn-menu>ul li a {
@@ -1736,6 +1737,10 @@ li .menu-item-info,
   .mobile-nav-menu {
     display: none;
   }
+
+  .web-learn-menu .menu-item-info {
+    margin-left: 1.5rem;
+  }
 }
 
 /* Breakpoint for Extra Extra Large Screens */
@@ -1754,17 +1759,18 @@ li .menu-item-info,
   }
 
   .contribute-menu .menu-left {
-    padding: 2.5rem 5rem 2.5rem 10rem;
-    max-width: 30.375rem;
+    padding: 2.5rem 5rem 2.5rem 8.5rem;
+    max-width: 31.875rem;
   }
 
   .contribute-menu .menu-right {
-    margin-left: 8.5rem;
+    margin-left: 7rem;
   }
 
   .web-learn-menu .menu-left {
-    max-width: 13rem;
+    max-width: 14.5rem;
     margin-left: 6.5rem;
+    padding-left: 0;
   }
 
   .web-learn-menu .menu-right {
@@ -1867,7 +1873,7 @@ li .menu-item-info,
 
   .access-data-menu .menu-right {
     margin: 0;
-    margin-left: 8rem;
+    margin-left: 6.5rem;
   }
 
   .explore-menu .menu-left {
@@ -1885,7 +1891,7 @@ li .menu-item-info,
   .contribute-menu .menu-right {
     height: unset;
     margin: 2rem 0;
-    margin-left: 11.5rem;
+    margin-left: 10rem;
   }
 
   .menu-wrapper .web-learn-menu {
@@ -2006,6 +2012,15 @@ li .menu-item-info,
     overflow: hidden;
     box-shadow: inset 0px 0px 20px 26px var(--hra-blue-3);
     pointer-events: none;
+  }
+
+  .access-data-menu .menu-right {
+    row-gap: 0.125rem;
+    column-gap: 0;
+  }
+
+  .access-data-menu .menu-right .menu-item {
+    max-width: 28rem;
   }
 
   .use-the-atlas .content {
