@@ -1143,6 +1143,15 @@ li .menu-item-info,
   }
 }
 
+@media screen and (min-width: 321px) and (max-width: 432px) {
+  .mobile-menu-bottom {
+    padding: 0 1rem 2.5rem 1rem;
+  }
+  .menu-item-headers li .submenu {
+    padding: 0 0.5rem;
+  }
+}
+
 /* Breakpoint for small */
 @media (min-width: 321px) and (max-width: 544px) {
   .mobile-nav-menu-btn {
