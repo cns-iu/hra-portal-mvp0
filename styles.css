@@ -17,25 +17,6 @@
   font-weight: 500;
 }
 
-/* Font Declaration Omnes */
-@font-face {
-  font-family: 'Omnes';
-  src: url('assets/fonts/omnes/omnes.light.ttf') format('opentype');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Omnes';
-  src: url('assets/fonts/omnes/omnes.regular.ttf') format('opentype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Omnes';
-  src: url('assets/fonts/omnes/omnes.medium.ttf') format('opentype');
-  font-weight: 500;
-}
-
 /* Animation keyframes */
 @keyframes nav-fadein {
   from {
@@ -109,7 +90,7 @@
 
   /* Fonts */
   --font-metropolis: 'Metropolis';
-  --font-omnes: 'Omnes';
+  --font-nunito-sans: 'Nunito Sans';
 }
 
 * {
@@ -450,7 +431,7 @@ body:has(>.menu-opened) {
 
 .learn-menu>ul li a {
   line-height: 1.5rem;
-  font-family: var(--font-omnes);
+  font-family: var(--font-nunito-sans);
   cursor: pointer;
   padding: 0.5rem;
 }
@@ -466,7 +447,7 @@ li .menu-item-info,
   line-height: 1.5rem;
   font-size: 1rem;
   color: var(--gray-secondary-2);
-  font-family: var(--font-omnes);
+  font-family: var(--font-nunito-sans);
   width: fit-content;
 }
 
@@ -716,7 +697,7 @@ li .menu-item-info,
 }
 
 .description {
-  font-family: var(--font-omnes);
+  font-family: var(--font-nunito-sans);
   line-height: 1.3125rem;
   color: var(--text-secondary);
 }
@@ -821,7 +802,7 @@ li .menu-item-info,
   z-index: 1;
   flex-shrink: 0;
   background-color: var(--hra-blue-2);
-  font-family: var(--font-omnes);
+  font-family: var(--font-nunito-sans);
   color: white;
   padding: 5rem 1.5rem 2.5rem;
   font-size: 1.25rem;
@@ -868,7 +849,7 @@ li .menu-item-info,
 }
 
 .atlas-description {
-  font-family: var(--font-omnes);
+  font-family: var(--font-nunito-sans);
   color: var(--gray-secondary-2);
   line-height: 1.3125rem;
   letter-spacing: 0.00375rem;
@@ -904,7 +885,7 @@ li .menu-item-info,
   gap: 0.5rem;
   font-weight: 300;
   align-items: center;
-  font-family: var(--font-omnes);
+  font-family: var(--font-nunito-sans);
   color: white;
   margin-bottom: 4rem;
   width: max-content;
@@ -943,7 +924,7 @@ li .menu-item-info,
 
 .funded-by span {
   display: inline-block;
-  font-family: var(--font-omnes);
+  font-family: var(--font-nunito-sans);
   font-weight: 300;
   color: white;
   margin-bottom: 1rem;
@@ -997,14 +978,14 @@ li .menu-item-info,
   padding: 0.5rem;
   line-height: 1.5rem;
   list-style-type: none;
-  font-family: var(--font-omnes);
+  font-family: var(--font-nunito-sans);
   font-weight: 300;
   width: fit-content;
   color: var(--text-primary);
 }
 
 .disclaimer {
-  font-family: var(--font-omnes);
+  font-family: var(--font-nunito-sans);
   font-weight: 300;
   line-height: 1.5rem;
   color: var(--text-primary);
@@ -1329,7 +1310,7 @@ li .menu-item-info,
   .description {
     letter-spacing: 0.0875rem;
     margin-bottom: 2rem;
-    font-family: var(--font-omnes);
+    font-family: var(--font-nunito-sans);
   }
 
   /* Collaborators Styles */
@@ -1360,7 +1341,7 @@ li .menu-item-info,
   }
 
   .atlas-description {
-    font-family: var(--font-omnes);
+    font-family: var(--font-nunito-sans);
     font-size: 1.125rem;
     line-height: 1.6875rem;
     margin-bottom: 2rem;
@@ -1941,7 +1922,7 @@ li .menu-item-info,
   }
 
   .atlas-description {
-    font-family: var(--font-omnes);
+    font-family: var(--font-nunito-sans);
   }
 
   /* Footer Styles */
