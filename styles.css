@@ -644,7 +644,7 @@ li .menu-item-info,
 .contribute-menu .menu-right {
   row-gap: 1rem;
   justify-content: flex-end;
-  padding: 40px 0;
+  padding: 3.125rem 0;
   height: calc(100% - 5rem);
   margin-left: 5.5rem;
 }
@@ -1098,6 +1098,9 @@ li .menu-item-info,
 
   .collab-label {
     max-width: calc(100vw - 3rem);
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    font-weight: 500;
   }
 
   .atlas-logo {
@@ -1200,8 +1203,11 @@ li .menu-item-info,
   }
 
   .collab-label {
-    padding: 3rem 9.5rem 2rem 3.5rem;
-    max-width: 21.4375rem;
+    padding: 3rem 3.5rem 2rem 3.5rem;
+    max-width: min(23.4375rem, calc(100vw - 7rem));
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    font-weight: 500;
   }
 
   .collab-banner {
@@ -1246,11 +1252,11 @@ li .menu-item-info,
 
   /* Footer Bottom Styles */
   .atlas-categories {
-    padding: 5.5rem 6.5rem 6rem 6.5rem;
+    padding: 5.5rem 3.5rem 6rem 3.5rem;
   }
 
   .disclaimer {
-    padding: 0rem 6.5rem 5.5rem 6.5rem;
+    padding: 0rem 3.5rem 5.5rem 3.5rem;
   }
 }
 
@@ -1662,6 +1668,10 @@ li .menu-item-info,
     margin-left: -5rem;
   }
 
+  .contribute-menu .menu-right {
+    padding: 0;
+  }
+
   .web-learn-menu .menu-item-info {
     max-width: 15.125rem;
   }
@@ -1755,6 +1765,7 @@ li .menu-item-info,
 
   .contribute-menu .menu-right {
     margin-left: 7rem;
+    padding: 0;
   }
 
   .web-learn-menu .menu-left {
